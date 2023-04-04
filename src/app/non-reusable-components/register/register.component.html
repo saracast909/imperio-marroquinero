@@ -1,0 +1,45 @@
+<section class="container-login">
+    <div class="container-img">
+        <img src="./assets/banner-register.png" alt="Banner" />
+    </div>
+    <div class="container-form">
+        <a href="/home"><img src="./assets/cross.png" alt="cerrar" /></a>
+        <div class="description">
+            <h2>Registrarse</h2>
+            <p>¿Ya te encuentras registrado?<a routerLink="/login"> Inicia sesion</a></p>
+        </div>
+        <form [formGroup]="formRegister" (ngSubmit)="procesar()" class="form">
+            <label for="name" class="form-label">Nombre</label>
+            <div class="alert alert-danger mb-2" [hidden]="name.valid || name.pristine">
+                Este campo es obligatorio.
+            </div>
+            <input type="text" id="name" class="form-control" formControlName="name" />
+
+            <label for="lastname" class="form-label">Apellido</label>
+            <div class="alert alert-danger mb-2" [hidden]="lastname.valid || lastname.pristine">
+                Este campo es obligatorio.
+            </div>
+            <input type="text" id="lastname" class="form-control" formControlName="lastname" />
+
+            <label for="email" class="form-label">Correo electronico</label>
+            <div class="alert alert-danger mb-2" [hidden]="email.valid || email.pristine">
+                <span *ngIf="email.errors?.['required']">Este campo es obligatorio.</span>
+                <span *ngIf="email.errors?.['pattern']">Ingrese un email valido.</span>
+            </div>
+            <input type="email" id="email" class="form-control" formControlName="email">
+
+            <label for="password" class="form-label">Contraseña</label>
+            <div class="alert alert-danger mb-2" [hidden]="password.valid || password.pristine">
+                <span *ngIf="password.errors?.['required']">Este campo es obligatorio.</span>
+                <span *ngIf="password.errors?.['minlength']">Debe tener minimo 6 caracteres.</span>
+            </div>
+            <input type="password" id="password" class="form-control" formControlName="password"/>
+
+             <div>
+                <button class="btn mt-3" [disabled]="formRegister.invalid">
+                    CREAR CUENTA
+                </button>
+            </div>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,62 @@
+.ribbon {
+    display: none;
+}
+
+nav {
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    left: 20px;
+    position: absolute;
+}
+
+.navbar-right {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .ribbon {
+        background: var(--primary-color);
+        height: 24px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .ribbon p {
+        margin: 0;
+        color: var(--white);
+        font-size: 16px;
+    }
+
+    .navbar-right {
+        display: flex;
+        position: absolute;
+        right: 20px;
+    }
+
+    .navbar-right ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar-right ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar-right li {
+        margin: 0 10px;
+    }
+}

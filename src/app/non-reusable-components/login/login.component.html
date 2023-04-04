@@ -1,0 +1,32 @@
+<section class="container-login">
+    <div class="container-img">
+        <img src="./assets/banner-login.png" alt="Banner" />
+    </div>
+    <div class="container-form">
+        <a href="/home"><img src="./assets/cross.png" alt="cerrar" /></a>
+        <div class="description">
+            <h2>Iniciar Sesión</h2>
+            <p>¿Aun no te has registrado? <a routerLink="/register">Registrate</a></p>
+        </div>
+
+        <form [formGroup]="formLogin" (ngSubmit)="procesar()" class="form">
+            <label for="email" class="form-label">Correo electronico</label>
+            <div class="alert alert-danger mb-2" [hidden]="email.valid || email.pristine">
+                <span *ngIf="email.errors?.['pattern']">El email debe ser valido.</span>
+                <span *ngIf="email.errors?.['required']">Este campo es obligatorio.</span>
+            </div>
+            <input type="email" id="email" class="form-control" formControlName="email" />
+            <label for="password" class="form-label">Contraseña</label>
+            <div class="alert alert-danger mb-2" [hidden]="password.valid || password.pristine">
+                Este campo es obligatorio.
+            </div>
+            <input type="password" id="password" class="form-control" formControlName="password" />
+            <a href="/recoverPass">¿Olvidaste tu contraseña?</a>
+            <div>
+                <button class="btn mt-3" [disabled]="formLogin.invalid">
+                    INGRESAR
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
