@@ -1,7 +1,13 @@
 <header>
   <div class="ribbon">
-    <p>Compra protegida y 100% segura.</p>
+    <ul>
+      <li><p>Compra protegida y 100% segura.</p></li>
+      <li><p>Multiples medios de pago.</p></li>
+      <li><p>Entregas a nivel nacional.</p></li>
+      <li><p>Primer cambio gratis.</p></li>
+    </ul>
   </div>
+
   <nav>
     <div class="navbar-left" (click)="menu =!menu">
       <img src="./assets/navbar/menu-hamburguesa.png" alt="Menu"/>
@@ -24,6 +30,7 @@
     </div>
   </nav>
 </header>
+
 <div *ngIf="menu" class="lateral-menu">
     <ul>
       <li>
