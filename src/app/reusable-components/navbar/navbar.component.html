@@ -6,59 +6,91 @@
       <div><p>Primer cambio gratis.</p></div>
   </div>
 
-  <nav>
-    <div class="navbar-left" (click)="menu =!menu">
-      <img src="./assets/navbar/menu-hamburguesa.png" alt="Menu"/>
+  <nav class="nav">
+    <div class="first-nav">
+      <div class="navbar-left">
+        <select name="divisas" class="form-select form-select-sm divisas">
+          <option selected value="cop">COP ($)</option>
+          <option value="usd">USD ($)</option>
+          <option value="eur">EUR (€)</option>
+        </select>
+        <a  routerLink="/menu"><img src="./assets/navbar/menu-hamburguesa.png" alt="Menu" class="menu-hamburguesa"/></a>
+      </div>
+      <div class="navbar-center">
+        <a routerLink="/home"><img src="./assets/logo.png" alt="Logo" id="logo"/></a>
+      </div>
+      <div class="navbar-right">
+          <a href="http://facebook.com" target="_blank" rel="noopener noreferrer" class="social-media"><img src="./assets/navbar/facebook.png" alt="Facebook"></a>
+          <a href="http://instagram.com" target="_blank" rel="noopener noreferrer" class="social-media"><img src="./assets/navbar/instagram.png" alt="Instagram"></a>
+          <a href="http://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-media"><img src="./assets/navbar/tik-tok.png" alt="TikTok"></a>
+          <ul class="bolsa">
+            <li>
+              <a href=""><img src="./assets/navbar/bolsa-de-la-compra.png" alt="Compra"/></a>
+            </li>
+          </ul>
+      </div>
     </div>
-    <div class="navbar-center">
-      <a routerLink="/home"><img src="./assets/logo.png" alt="Logo" id="logo"/></a>
-    </div>
-    <div class="navbar-right">
-      <ul>
-        <li>
-          <a href=""><img src="./assets/navbar/corazon.png" alt="Corazon" /></a>
-        </li>
-        <li>
-          <a routerLink="/login"><img src="./assets/navbar/usuario.png" alt="Usuario"/></a>
-        </li>
-        <li>
-          <a href=""><img src="./assets/navbar/bolsa-de-la-compra.png" alt="Compra"/></a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</header>
-
-<div *ngIf="menu" class="lateral-menu">
-    <ul>
-      <li>
-        <p>CATEGORIAS</p>
-        <ul>
-          <li><a href="">Bolsos</a>
-            <ul>
+    <hr>
+    <div class="second-nav">
+      <div class="navbar-left">
+        <input type="text" class="form-control" placeholder="Buscar">
+      </div>
+      <div class="navbar-center">
+        <ul class="menu">
+          <li><a href="">TODO</a></li>
+          <li>
+            <a href="">NUEVO</a>
+            <ul class="submenu">
               <li><a href="">Mujer</a></li>
               <li><a href="">Hombre</a></li>
               <li><a href="">Cuero</a></li>
               <li><a href="">Otros materiales</a></li>
             </ul>
           </li>
-          <li><a href="">Billeteras</a>
-            <ul>
-              <li><a href="">Mujer</a></li>
-              <li><a href="">Hombre</a></li>
+          <li>
+            <a href="">BOLSOS</a>
+            <ul class="submenu">
+              <li><a href="">Morrales</a></li>
+              <li><a href="">Manos libres</a></li>
+              <li><a href="">Riñoneras</a></li>
               <li><a href="">Cuero</a></li>
               <li><a href="">Otros materiales</a></li>
             </ul>
           </li>
-          <li><a href="">Correas</a>
-            <ul>
-              <li><a href="">Mujer</a></li>
-              <li><a href="">Hombre</a></li>
+          <li>
+            <a href="">ACCESORIOS</a>
+            <ul class="submenu">
+              <li><a href="">Billeteras</a></li>
+              <li><a href="">Monederos</a></li>
+              <li><a href="">Cuero</a></li>
+              <li><a href="">Otros materiales</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">CINTURONES</a>
+            <ul class="submenu">
+              <li><a href="">Unifaz</a></li>
+              <li><a href="">Doblefaz</a></li>
               <li><a href="">Cuero</a></li>
               <li><a href="">Otros materiales</a></li>
             </ul>
           </li>
         </ul>
-      </li>
-    </ul>
-  </div>
+      </div>
+      <div class="navbar-right">
+        <ul>
+          <li>
+            <a href=""><img src="./assets/navbar/corazon.png" alt="Corazon" /></a>
+          </li>
+          <li>
+            <a routerLink="/login" ><img src="./assets/navbar/usuario.png" alt="Usuario"/></a>
+          </li>
+          <li>
+            <a href=""><img src="./assets/navbar/bolsa-de-la-compra.png" alt="Compra"/></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>

@@ -37,83 +37,95 @@
 }
 
 /* Menu */
-
-nav {
+.nav {
+    display: block;
     background-color: var(--white);
+    width: 100%;
+}
+.first-nav, .second-nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    padding: 10px;
+    padding: 0.7rem 0;
 }
-.navbar-left {
+.second-nav{
+    margin: 1rem 0;
+}
+.navbar-left{
     display: flex;
     align-items: center;
     left: 20px;
     position: absolute;
 }
-.navbar-right {
+.form-select{
+    border: none;
+    font-weight: 800;
+    color: var(--primary-color);
+    background-image: url("/assets/navbar/angle-small-down.png");
+    background-position: right 1rem center;
+    background-size: 20px 20px;
+}
+.navbar-right, .navbar-right{
+    display: flex;
+    position: absolute;
+    right: 20px;
+    gap: 20px;
+}
+hr{
+    margin: 0;
+}
+.navbar-right ul, .navbar-center ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.navbar-right li{
+    margin: 0 10px;
+}
+.navbar-center li {
+    margin: 0 20px;
+}
+.navbar-center li a{
+    color: var(--black);
+    text-decoration: none;
+    font-weight: bold;
+}
+.navbar-center .menu li{
+    position: relative;
+    display: inline-block;
+}
+.navbar-center .menu li:hover > .submenu{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    padding: 35px 15px 15px 15px;
+    margin-left: -15px;
+    gap: 15px;
+    border-radius: 4px;
+}
+.navbar-center .submenu{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: var(--white);
+}
+.navbar-center .submenu li{
+    margin: 0;
+}
+.menu-hamburguesa, .navbar-right .bolsa{
     display: none;
 }
 
-/* Menu lateral */
-
-.lateral-menu{
-    display: flex;
-    padding-top: 5%;
-    width: 25%;
-    height: 90vh;
-    background-color: var(--white);
-    position: absolute;
-}
-.lateral-menu ul{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-}
-.lateral-menu ul p{
-    font-weight: bold;
-    margin-bottom: 30px;
-}
-.lateral-menu ul ul a{
-    color: var(--black);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: large;
-} 
-.lateral-menu ul ul ul{
-   display: none;
-}
-.lateral-menu ul ul li:hover ul{
-    display: flex;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-
-@media screen and (min-width: 768px) {
-    .navbar-right {
-        display: flex;
-        position: absolute;
-        right: 20px;
-    }
-
-    .navbar-right ul {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .navbar-right ul {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .navbar-right li {
-        margin: 0 10px;
+@media screen and (max-width: 768px) {
+    .first-nav .navbar-left .divisas, 
+    .first-nav .navbar-right .social-media, 
+    .navbar-center .menu,
+    .second-nav, hr{
+        display: none; 
+    } 
+    .menu-hamburguesa, .navbar-right .bolsa{
+        display: block;
     }
 }

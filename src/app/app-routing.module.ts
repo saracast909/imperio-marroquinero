@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './component-of-components/home/home.component';
 import { LoginComponent } from './non-reusable-components/login/login.component';
 import { RegisterComponent } from './non-reusable-components/register/register.component';
+import { MenuComponent } from './non-reusable-components/menu/menu.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'menu',
+    component: MenuComponent
   }
 ];
 
