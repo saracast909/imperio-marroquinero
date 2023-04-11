@@ -1,0 +1,57 @@
+<app-navbar></app-navbar>
+<section>
+    <div class="photos">
+        <div (click)="img = './assets/product/billetera.png'"><img src="./assets/product/billetera.png" alt="Billetera"></div>
+        <div (click)="img = './assets/product/billetera2.png'"><img src="./assets/product/billetera2.png" alt="Billetera"></div>
+        <div (click)="img = './assets/product/billetera.png'"><img src="./assets/product/billetera.png" alt="Billetera"></div>
+        <div (click)="img = './assets/product/billetera2.png'"><img src="./assets/product/billetera2.png" alt="Billetera"></div>
+    </div>
+    <div class="product-photo">
+        <img [src]='img' alt="Billetera">
+    </div>
+    <div class="product-description">
+        <p class="category-product">BILLETERAS HOMBRE</p>
+        <h3 class="product-name">Billetera formas</h3>
+        <p class="price">$20.000</p>
+        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quibusdam dolorum beatae possimus atque vel minima officiis aperiam nemo, deleniti modi reprehenderit, eveniet, voluptas officia ipsum.</p>
+        <div class="product-colors">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                  DETALLES DEL PRODUCTO
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                  <ul>
+                    <li>Cuero con apliques en Mola.</li>
+                    <li>Múltiples ranuras para tarjetas y espacio para billetes.</li>
+                    <li>Altura 10cm</li>
+                    <li>Ancho 15cm</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                  CUIDADOS
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <p>No mojar ni exponer al sol. Limpiar con un paño húmedo suave</p>
+                </div>
+              </div>
+            </div>
+        </div>
+        <button class="btn">AGREGAR AL CARRITO</button>
+    </div>
+</section>
+<app-footer></app-footer>

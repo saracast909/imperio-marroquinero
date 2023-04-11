@@ -9,6 +9,7 @@ import { LoginComponent } from './non-reusable-components/login/login.component'
 import { RegisterComponent } from './non-reusable-components/register/register.component';
 import { NavbarComponent } from './reusable-components/navbar/navbar.component';
 import { FooterComponent } from './reusable-components/footer/footer.component';
+import { ProductoComponent } from './non-reusable-components/producto/producto.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FooterComponent } from './reusable-components/footer/footer.component';
     LoginComponent,
     RegisterComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ProductoComponent
   ],
   imports: [
     BrowserModule,
