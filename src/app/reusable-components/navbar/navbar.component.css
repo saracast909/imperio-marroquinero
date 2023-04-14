@@ -1,5 +1,4 @@
 /* Cinta */
-
 .ribbon {
     height: 24px;
     overflow: hidden;
@@ -117,6 +116,48 @@ hr{
 .menu-hamburguesa, .navbar-right .bolsa{
     display: none;
 }
+/*menu mobile*/
+.menu-mobile{
+    position: absolute;
+    background: var(--white);
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    z-index: 1;
+}
+.menu-mobile ul{
+    list-style: none;
+}
+.menu-mobile img{
+    width: 30px;
+}
+.menu-mobile a{
+    text-decoration: none;
+    color: var(--black);
+    margin-left: 30px;
+    display: inline-block;
+}
+.menu-mobile ul li ul{
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.mb-cat-pr{
+    font-weight: bold;
+    font-size: 22px;
+    margin: 12px 0;
+}
+.mb-cat-seg{
+    font-size: 19px;
+}
+.mb-sub-cat{
+    display: none;
+}
+
 
 @media screen and (max-width: 768px) {
     .first-nav .navbar-left .divisas, 
@@ -127,5 +168,12 @@ hr{
     } 
     .menu-hamburguesa, .navbar-right .bolsa{
         display: block;
+    }
+    .form-control{
+        padding: 0.7rem 1.5rem;
+        font-size: 1.2rem;
+    }
+    .form-select-sm{
+        font-size: 1.2rem;
     }
 }

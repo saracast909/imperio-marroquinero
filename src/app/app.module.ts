@@ -10,7 +10,6 @@ import { RegisterComponent } from './non-reusable-components/register/register.c
 import { NavbarComponent } from './reusable-components/navbar/navbar.component';
 import { FooterComponent } from './reusable-components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MenuComponent } from './non-reusable-components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +18,7 @@ import { MenuComponent } from './non-reusable-components/menu/menu.component';
     LoginComponent,
     RegisterComponent,
     NavbarComponent,
-    FooterComponent,
-    MenuComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
