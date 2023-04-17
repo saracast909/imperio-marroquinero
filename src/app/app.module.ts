@@ -10,6 +10,7 @@ import { RegisterComponent } from './non-reusable-components/register/register.c
 import { NavbarComponent } from './reusable-components/navbar/navbar.component';
 import { FooterComponent } from './reusable-components/footer/footer.component';
 import { ProductoComponent } from './non-reusable-components/producto/producto.component';
+import { PageNotFoundComponent } from './non-reusable-components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ProductoComponent } from './non-reusable-components/producto/producto.c
     RegisterComponent,
     NavbarComponent,
     FooterComponent,
-    ProductoComponent
+    ProductoComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

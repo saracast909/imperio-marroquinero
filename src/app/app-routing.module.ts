@@ -4,6 +4,7 @@ import { HomeComponent } from './component-of-components/home/home.component';
 import { LoginComponent } from './non-reusable-components/login/login.component';
 import { RegisterComponent } from './non-reusable-components/register/register.component';
 import { ProductoComponent } from './non-reusable-components/producto/producto.component';
+import { PageNotFoundComponent } from './non-reusable-components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,10 @@ const routes: Routes = [
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
   },
   {
     path: 'login',

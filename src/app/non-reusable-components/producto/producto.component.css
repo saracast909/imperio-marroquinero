@@ -86,3 +86,26 @@ section{
     border-radius: 2px;
     height: 2.8rem;
 }
+
+@media screen and (max-width: 768px) {
+    section{
+        width: 100%;
+        height: 85vh;
+        flex-direction: column;
+        justify-content: normal;
+    }
+    .photos{
+        display: none;
+        flex-direction: row;
+    }
+    .product-description{
+        width: 86%;
+    }
+    .product-photo{
+        width: 100%;
+        height: 32%;
+    }
+    .product-photo img{
+        width: 12rem;
+    }
+}
