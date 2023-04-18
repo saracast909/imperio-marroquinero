@@ -17,10 +17,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: '**',
-    component: PageNotFoundComponent
-  },
-  {
     path: 'login',
     component: LoginComponent
   },
@@ -31,6 +27,10 @@ const routes: Routes = [
   {
     path: 'producto',
     component: ProductoComponent
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
   }
 ];
 
