@@ -5,6 +5,7 @@ import { LoginComponent } from './non-reusable-components/login/login.component'
 import { RegisterComponent } from './non-reusable-components/register/register.component';
 import { ProductoComponent } from './non-reusable-components/producto/producto.component';
 import { PageNotFoundComponent } from './non-reusable-components/page-not-found/page-not-found.component';
+import { AllProductsComponent } from './non-reusable-components/all-products/all-products.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'producto',
     component: ProductoComponent
+  },
+  {
+    path: 'productos',
+    component: AllProductsComponent
   },
   {
     path: '**',

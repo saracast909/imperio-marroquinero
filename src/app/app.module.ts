@@ -11,6 +11,7 @@ import { NavbarComponent } from './reusable-components/navbar/navbar.component';
 import { FooterComponent } from './reusable-components/footer/footer.component';
 import { ProductoComponent } from './non-reusable-components/producto/producto.component';
 import { PageNotFoundComponent } from './non-reusable-components/page-not-found/page-not-found.component';
+import { AllProductsComponent } from './non-reusable-components/all-products/all-products.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PageNotFoundComponent } from './non-reusable-components/page-not-found/
     NavbarComponent,
     FooterComponent,
     ProductoComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AllProductsComponent
   ],
   imports: [
     BrowserModule,
