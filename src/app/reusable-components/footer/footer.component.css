@@ -1,50 +1,31 @@
 footer{
     background-color: var(--white);
     width: 100%;
-}
-.information{
     display: flex;
-    justify-content: center;
-    margin: 24px 0;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 40px 120px;
 }
-.social-networks, .payment-methods, .categories{
-    display: none;
+.logo{
+    width: 80px;
 }
-footer hr:nth-child(3){
-    display: none;
+.info{
+    display: flex;
+    gap: 120px;
 }
-
-@media screen and (min-width: 768px) {
-    footer{
-        margin-bottom: 30px;
-    }
-    .information{
-        margin: 20px 0;
-        align-items: center;
-    }
-    .social-networks{
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        position: absolute;
-        left: 20px;
-    }
-    .payment-methods{
-        display: block;
-        position: absolute;
-        right: 20px;
-    }
-    footer hr:nth-child(3){
-        display: block;
-    }
-    .categories{
-        display: flex;
-        gap: 15px;
-        justify-content: center;
-    }
-    .categories a{
-        color: var(--black);
-        text-decoration: none;
-        font-weight: 500;
-    }
+.info div{
+    display: flex;
+    flex-direction: column;
+}
+p{
+    font-weight: bolder;
+    color: rgba(23, 16, 16, 70%);
+}
+a img{
+    margin-right: 15px;
+}
+a{
+    text-decoration: none;
+    color: var(--black);
+    font-weight: bold;
 }
