@@ -29,3 +29,23 @@ a{
     color: var(--black);
     font-weight: bold;
 }
+@media screen and (max-width: 596px) {
+    p{
+        margin-bottom: 2px;
+    }
+    footer{
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 25px 35px;
+    }
+    .info{
+        gap: 18px;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+    .info div div{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+}
