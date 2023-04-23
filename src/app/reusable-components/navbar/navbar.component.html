@@ -1,11 +1,10 @@
 <header>
   <div class="ribbon">
-      <div><p>Compra protegida y 100% segura.</p></div>
-      <div><p>Multiples medios de pago.</p></div>
-      <div><p>Entregas a nivel nacional.</p></div>
-      <div><p>Primer cambio gratis.</p></div>
+    <div><p>Compra protegida y 100% segura.</p></div>
+    <div><p>Multiples medios de pago.</p></div>
+    <div><p>Entregas a nivel nacional.</p></div>
+    <div><p>Primer cambio gratis.</p></div>
   </div>
-
   <nav class="nav">
     <div class="first-nav">
       <div class="navbar-left">
@@ -14,26 +13,26 @@
           <option value="usd">USD ($)</option>
           <option value="eur">EUR (€)</option>
         </select>
-        <a (click)="menu = !menu" (click)="img = './assets/cross.png'"><img [src]="img" alt="Menu" class="menu-hamburguesa" ></a>
+        <a (click)="menu = !menu" (click)="menuopen = !menuopen"><img [src]="menuopen ? 'assets/navbar/menu-mobile/cross.png' : 'assets/navbar/menu-mobile/menu-hamburguesa.png'" alt="Menu" class="menu-hamburguesa"/></a>
       </div>
       <div class="navbar-center">
         <a routerLink="/home"><img src="./assets/logo.png" alt="Logo" id="logo"/></a>
       </div>
       <div class="navbar-right">
-          <a href="http://facebook.com" target="_blank" rel="noopener noreferrer" class="social-media"><img src="./assets/navbar/facebook.png" alt="Facebook"></a>
-          <a href="http://instagram.com" target="_blank" rel="noopener noreferrer" class="social-media"><img src="./assets/navbar/instagram.png" alt="Instagram"></a>
-          <a href="http://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-media"><img src="./assets/navbar/tik-tok.png" alt="TikTok"></a>
-          <ul class="bolsa">
-            <li>
-              <a href=""><img src="./assets/navbar/bolsa-de-la-compra.png" alt="Compra"/></a>
-            </li>
-          </ul>
+        <a href="http://facebook.com" target="_blank" rel="noopener noreferrer" class="social-media"><img src="./assets/navbar/facebook.png" alt="Facebook"/></a>
+        <a href="http://instagram.com" target="_blank" rel="noopener noreferrer" class="social-media"><img src="./assets/navbar/instagram.png" alt="Instagram"/></a>
+        <a href="http://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-media"><img src="./assets/navbar/tik-tok.png" alt="TikTok"/></a>
+        <ul class="bolsa">
+          <li>
+            <a href=""><img src="./assets/navbar/shopping-bag.png" alt="Compra"/></a>
+          </li>
+        </ul>
       </div>
     </div>
-    <hr>
+    <hr />
     <div class="second-nav">
       <div class="navbar-left">
-        <input type="text" class="form-control" placeholder="Buscar">
+        <input type="text" class="form-control" placeholder="Buscar" />
       </div>
       <div class="navbar-center">
         <ul class="menu">
@@ -41,9 +40,11 @@
             <a href="">TODO</a>
           </li>
           <li *ngFor="let category of categories">
-            <a [routerLink]="[category.url]">{{category.name}}</a>
+            <a [routerLink]="[category.url]">{{ category.name }}</a>
             <ul class="submenu">
-              <li *ngFor="let subcategory of category.subcategories"><a [routerLink]="[subcategory.url]">{{subcategory.name}}</a></li>
+              <li *ngFor="let subcategory of category.subcategories">
+                <a [routerLink]="[subcategory.url]">{{ subcategory.name }}</a>
+              </li>
             </ul>
           </li>
         </ul>
@@ -51,52 +52,57 @@
       <div class="navbar-right">
         <ul>
           <li>
-            <a href=""><img src="./assets/navbar/corazon.png" alt="Corazon" /></a>
+            <a href=""><img src="./assets/navbar/heart.png" alt="Corazon"/></a>
           </li>
           <li>
-            <a routerLink="/login" ><img src="./assets/navbar/usuario.png" alt="Usuario"/></a>
+            <a routerLink="/login"><img src="./assets/navbar/user.png" alt="Usuario"/></a>
           </li>
           <li>
-            <a href=""><img src="./assets/navbar/bolsa-de-la-compra.png" alt="Compra"/></a>
+            <a href=""><img src="./assets/navbar/shopping-bag.png" alt="Compra"/></a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 </header>
-
 <div *ngIf="menu" class="menu-mobile">
-    <ul>
+  <ul>
     <li>
-      <img src="./assets/navbar/menu-mobile/shop.png" alt="Tienda">
+      <img src="./assets/navbar/menu-mobile/shop.png" alt="Tienda" />
       <a routerLink="/producto" class="mb-cat-pr">PRODUCTOS</a>
       <ul>
         <li class="mb-cat-seg"><a href="">TODO</a></li>
-        <li *ngFor="let category of categories" class="mb-cat-seg">
-            <a [routerLink]="[category.url]">{{category.name}}</a>
-            <ul>
-              <li *ngFor="let subcategory of category.subcategories" class="mb-sub-cat">
-                <a [routerLink]="[subcategory.url]">{{subcategory.name}}</a>
-              </li>
-            </ul>
+        <li *ngFor="let category of categories; let i = index" class="mb-cat-seg">
+          <a [routerLink]="[category.url]" (click)="subcategories(i)">{{category.name}}</a>
+          <div *ngIf="category.showsubcategories" class="sub-mobile">
+            <h4 (click)="subcategories(i)"><img src="./assets/navbar/menu-mobile/angle-left.png" alt="Flecha"/>{{category.name}}</h4>
+            <div>
+              <h5>Categorias</h5>
+              <ul>
+                <li *ngFor="let subcategory of category.subcategories">
+                  <a [href]="[subcategory.url]">{{ subcategory.name }}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </li>
       </ul>
     </li>
     <li>
-      <img src="./assets/navbar/menu-mobile/usuario.png" alt="Usuario">
+      <img src="./assets/navbar/menu-mobile/user.png" alt="Usuario" />
       <a routerLink="/login" class="mb-cat-pr">MI CUENTA</a>
     </li>
     <li>
-      <img src="./assets/navbar/menu-mobile/corazon.png" alt="Corazon">
+      <img src="./assets/navbar/menu-mobile/heart.png" alt="Corazon" />
       <a routerLink="" class="mb-cat-pr">LISTA DE DESEOS</a>
     </li>
     <li>
-      <img src="./assets/navbar/menu-mobile/bags.png" alt="Bolsas de compra">
+      <img src="./assets/navbar/menu-mobile/bags.png" alt="Bolsas de compra" />
       <a routerLink="" class="mb-cat-pr">MIS PEDIDOS</a>
     </li>
   </ul>
   <div>
-    <input type="text" class="form-control" placeholder="Buscar">
+    <input type="text" class="form-control" placeholder="Buscar" />
   </div>
   <div>
     <select name="divisas" class="form-select form-select-sm divisas">

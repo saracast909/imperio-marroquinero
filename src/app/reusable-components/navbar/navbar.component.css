@@ -21,16 +21,12 @@
     animation: animacion-texto 15s alternate infinite;
 }
 @keyframes animacion-texto {
-    
     0%{margin-top: 0;}
     20%{margin-top: 0;}
-    
     25%{margin-top: -24px;}
     45%{margin-top: -24px;}
-    
     50%{margin-top: -48px;}
     70%{margin-top: -48px;}
-    
     75%{margin-top: -72px;}
     100%{margin-top: -72px;}
 }
@@ -116,17 +112,19 @@ hr{
 .menu-hamburguesa, .navbar-right .bolsa{
     display: none;
 }
-/*menu mobile*/
+
+/* Menu Mobile */
 .menu-mobile{
     position: absolute;
     background: var(--white);
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 25px;
+    padding-top: 40px;
     z-index: 1;
 }
 .menu-mobile ul{
@@ -157,8 +155,41 @@ hr{
 .mb-sub-cat{
     display: none;
 }
-
-
+/* Subcategorias Mobile */
+.sub-mobile{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: var(--white);
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    align-items: center;
+    padding-top: 20px;
+}
+.sub-mobile h4{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--black);
+    width: 80%;
+    padding: 10px 0;
+    gap: 20px;
+    font-weight: bold;
+}
+.sub-mobile h5{
+    font-weight: 600;
+    padding: 15px 0;
+}
+.sub-mobile ul{
+    padding: 0;
+}
+.sub-mobile ul a{
+    margin: 0;
+}
+.sub-mobile div{
+    width: 80%;
+}
 @media screen and (max-width: 768px) {
     .first-nav .navbar-left .divisas, 
     .first-nav .navbar-right .social-media, 

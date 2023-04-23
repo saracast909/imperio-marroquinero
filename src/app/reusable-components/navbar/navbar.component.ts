@@ -5,9 +5,11 @@ import { Component } from '@angular/core';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
+
 export class NavbarComponent {
-  img = './assets/navbar/menu-hamburguesa.png'
+  menuopen : boolean = false
   menu : boolean = false
+  submenu : boolean = false
 
   categories = [
     {
@@ -30,7 +32,8 @@ export class NavbarComponent {
           name: 'Otros materiales',
           url: '/productos/nuevo/otros'
         }
-      ]
+      ],
+      showsubcategories: false
     },
     {
       name: 'BOLSOS',
@@ -56,7 +59,8 @@ export class NavbarComponent {
           name: 'Otros materiales',
           url: '/productos/bolsos/otros'
         }
-      ]
+      ],
+      showsubcategories: false
     },
     {
       name: 'ACCESORIOS',
@@ -78,29 +82,35 @@ export class NavbarComponent {
           name: 'Otros materiales',
           url: '/productos/accesorios/otros'
         }
-      ]
+      ],
+      showsubcategories: false
     },
     {
       name: 'CINTURONES',
-      url: '/productos/cinturones',
+      url: '#',
       subcategories: [
         {
           name: 'Unifaz',
-          url: '/productos/cinturones/unifaz'
+          url: '#'
         },
         {
           name: 'Doblefaz',
-          url: '/productos/cinturones/doblefaz'
+          url: '#'
         },
         {
           name: 'Cuero',
-          url: '/productos/accesorios/cuero'
+          url: '#'
         },
         {
           name: 'Otros materiales',
-          url: '/productos/accesorios/otros'
+          url: '#'
         }
-      ]
+      ],
+      showsubcategories: false
     }
-  ]
+  ];
+
+  subcategories(index: number){
+    this.categories[index].showsubcategories = !this.categories[index].showsubcategories;
+  }
 }
