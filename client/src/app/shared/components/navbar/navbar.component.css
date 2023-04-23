@@ -1,5 +1,4 @@
 /* Cinta */
-
 .ribbon {
     height: 24px;
     overflow: hidden;
@@ -22,98 +21,194 @@
     animation: animacion-texto 15s alternate infinite;
 }
 @keyframes animacion-texto {
-    
     0%{margin-top: 0;}
     20%{margin-top: 0;}
-    
     25%{margin-top: -24px;}
     45%{margin-top: -24px;}
-    
     50%{margin-top: -48px;}
     70%{margin-top: -48px;}
-    
     75%{margin-top: -72px;}
     100%{margin-top: -72px;}
 }
 
 /* Menu */
-
-nav {
+.nav {
+    display: block;
     background-color: var(--white);
+    width: 100%;
+}
+.first-nav, .second-nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    padding: 10px;
+    padding: 0.7rem 0;
 }
-.navbar-left {
+.second-nav{
+    margin: 1rem 0;
+}
+.navbar-left{
     display: flex;
     align-items: center;
     left: 20px;
     position: absolute;
 }
-.navbar-right {
+.form-select{
+    border: none;
+    font-weight: 800;
+    color: var(--primary-color);
+    background-image: url("/assets/navbar/angle-small-down.png");
+    background-position: right 1rem center;
+    background-size: 20px 20px;
+}
+.navbar-right, .navbar-right{
+    display: flex;
+    position: absolute;
+    right: 20px;
+    gap: 20px;
+}
+hr{
+    margin: 0;
+}
+.navbar-right ul, .navbar-center ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.navbar-right li{
+    margin: 0 10px;
+}
+.navbar-center li {
+    margin: 0 20px;
+}
+.navbar-center li a{
+    color: var(--black);
+    text-decoration: none;
+    font-weight: bold;
+}
+.navbar-center .menu li{
+    position: relative;
+    display: inline-block;
+}
+.navbar-center .menu li:hover > .submenu{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    padding: 35px 15px 15px 15px;
+    margin-left: -15px;
+    gap: 15px;
+    border-radius: 4px;
+}
+.navbar-center .submenu{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: var(--white);
+}
+.navbar-center .submenu li{
+    margin: 0;
+}
+.menu-hamburguesa, .navbar-right .bolsa{
     display: none;
 }
 
-/* Menu lateral */
-
-.lateral-menu{
-    display: flex;
-    padding-top: 5%;
-    width: 25%;
-    height: 90vh;
-    background-color: var(--white);
+/* Menu Mobile */
+.menu-mobile{
     position: absolute;
-}
-.lateral-menu ul{
-    list-style: none;
+    background: var(--white);
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 35px;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 25px;
+    padding-top: 40px;
+    z-index: 1;
 }
-.lateral-menu ul p{
-    font-weight: bold;
-    margin-bottom: 30px;
+.menu-mobile ul{
+    list-style: none;
 }
-.lateral-menu ul ul a{
-    color: var(--black);
+.menu-mobile img{
+    width: 30px;
+}
+.menu-mobile a{
     text-decoration: none;
-    font-weight: 500;
-    font-size: large;
-} 
-.lateral-menu ul ul ul{
-   display: none;
+    color: var(--black);
+    margin-left: 30px;
+    display: inline-block;
 }
-.lateral-menu ul ul li:hover ul{
+.menu-mobile p{
+    margin: 0 0 0 30px;
+}
+.menu-mobile ul li ul{
+    gap: 15px;
     display: flex;
-    gap: 20px;
-    margin-top: 20px;
+    flex-direction: column;
 }
-
-
-@media screen and (min-width: 768px) {
-    .navbar-right {
-        display: flex;
-        position: absolute;
-        right: 20px;
+.mb-cat-pr{
+    font-weight: bold;
+    font-size: 22px;
+    margin: 12px 0;
+}
+.mb-cat-seg{
+    font-size: 19px;
+}
+.mb-sub-cat{
+    display: none;
+}
+/* Subcategorias Mobile */
+.sub-mobile{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: var(--white);
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    align-items: center;
+    padding-top: 20px;
+}
+.sub-mobile .title-cat{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--black);
+    width: 80%;
+    padding: 10px 0;
+    gap: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+.sub-mobile h5{
+    font-weight: 600;
+    padding: 15px 0;
+}
+.sub-mobile ul{
+    padding: 0;
+}
+.sub-mobile ul a{
+    margin: 0;
+}
+.sub-mobile div{
+    width: 80%;
+}
+@media screen and (max-width: 768px) {
+    .first-nav .navbar-left .divisas, 
+    .first-nav .navbar-right .social-media, 
+    .navbar-center .menu,
+    .second-nav, hr{
+        display: none; 
+    } 
+    .menu-hamburguesa, .navbar-right .bolsa{
+        display: block;
     }
-
-    .navbar-right ul {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
+    .form-control{
+        padding: 0.7rem 1.5rem;
+        font-size: 1.2rem;
     }
-
-    .navbar-right ul {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .navbar-right li {
-        margin: 0 10px;
+    .form-select-sm{
+        font-size: 1.2rem;
     }
 }
