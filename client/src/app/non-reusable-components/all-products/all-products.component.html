@@ -48,23 +48,11 @@
         </div>
     </div>
 </aside>
-<!-- <section class="container-product">
-    <div class="">
-        <div class="image">
-            <img src="/assets/products/image.png" alt="">
-        </div>
-        <div class="info">
-            <div class="description">
-                <p class="title">Bolso de cuero negro</p>
-                <p class="price">$50.000</p>
-            </div>
-            <div>
-                <img src="/assets/products/corazon.png" alt="">
-            </div>
-        </div>
-    </div>
-</section> -->
 <section class="container">
+    <div class="filtros mb-3 mt-3">
+        <h3>Bolsos/Morrales</h3>
+        <p>FILTROS</p>
+    </div>
     <div class="cards-container">
         <div class="product-card" *ngFor="let product of products">
             <img src="/assets/products/image.png" [src]="product.imagen" [alt]="product.nombre" class="product-image">
