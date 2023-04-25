@@ -14,96 +14,96 @@ export class NavbarComponent {
   categories = [
     {
       name: 'NUEVO',
-      url: '/productos/nuevo',
+      url: '/all-products',
       subcategories: [
         {
           name: 'Mujer',
-          url: '/productos/nuevo/mujer'
+          url: '/all-products'
         },
         {
           name: 'Hombre',
-          url: '/productos/nuevo/hombre'
+          url: '/all-products'
         },
         {
           name: 'Cuero',
-          url: '/productos/nuevo/cuero'
+          url: '/all-products'
         },
         {
           name: 'Otros materiales',
-          url: '/productos/nuevo/otros'
+          url: '/all-products'
         }
       ],
       showsubcategories: false
     },
     {
       name: 'BOLSOS',
-      url: '/productos/bolsos',
+      url: '/all-products',
       subcategories: [
         {
           name: 'Morrales',
-          url: '/productos/nuevo/morrales'
+          url: '/all-products'
         },
         {
           name: 'Manos libres',
-          url: '/productos/bolsos/m-libre'
+          url: '/all-products'
         },
         {
           name: 'Riñoneras',
-          url: '/productos/bolsos/riñoneras'
+          url: '/all-products'
         },
         {
           name: 'Cuero',
-          url: '/productos/bolsos/cuero'
+          url: '/all-products'
         },
         {
           name: 'Otros materiales',
-          url: '/productos/bolsos/otros'
+          url: '/all-products'
         }
       ],
       showsubcategories: false
     },
     {
       name: 'ACCESORIOS',
-      url: '/productos/accesorios',
+      url: '/all-products',
       subcategories: [
         {
           name: 'Billeteras',
-          url: '/productos/accesorios/billeteras'
+          url: '/all-products'
         },
         {
           name: 'Monederos',
-          url: '/productos/accesorios/monederos'
+          url: '/all-products'
         },
         {
           name: 'Cuero',
-          url: '/productos/accesorios/cuero'
+          url: '/all-products'
         },
         {
           name: 'Otros materiales',
-          url: '/productos/accesorios/otros'
+          url: '/all-products'
         }
       ],
       showsubcategories: false
     },
     {
       name: 'CINTURONES',
-      url: '#',
+      url: '/all-products',
       subcategories: [
         {
           name: 'Unifaz',
-          url: '#'
+          url: '/all-products'
         },
         {
           name: 'Doblefaz',
-          url: '#'
+          url: '/all-products'
         },
         {
           name: 'Cuero',
-          url: '#'
+          url: '/all-products'
         },
         {
           name: 'Otros materiales',
-          url: '#'
+          url: '/all-products'
         }
       ],
       showsubcategories: false

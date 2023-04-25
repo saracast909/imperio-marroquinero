@@ -1,29 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './non-reusable-components/login/login.component';
-import { RegisterComponent } from './non-reusable-components/register/register.component';
-import { ProductoComponent } from './non-reusable-components/producto/producto.component';
-import { PageNotFoundComponent } from './non-reusable-components/page-not-found/page-not-found.component';
-import { AllProductsComponent } from './non-reusable-components/all-products/all-products.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    RegisterComponent,
-    ProductoComponent,
-    PageNotFoundComponent,
-    AllProductsComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    FormsModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

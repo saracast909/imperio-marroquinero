@@ -1,10 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './non-reusable-components/login/login.component';
-import { RegisterComponent } from './non-reusable-components/register/register.component';
-import { ProductoComponent } from './non-reusable-components/producto/producto.component';
-import { PageNotFoundComponent } from './non-reusable-components/page-not-found/page-not-found.component';
-import { AllProductsComponent } from './non-reusable-components/all-products/all-products.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -12,20 +8,12 @@ const routes: Routes = [
     loadChildren: () => import(`./modules/home/home.module`).then(m => m.HomeModule)
   },
   {
-    path: 'login',
-    component: LoginComponent
+    path: 'all-products',
+    loadChildren: () => import('./modules/products/products.module').then(m => m.ProductsModule)
   },
   {
-    path: 'register',
-    component: RegisterComponent
-  },
-  {
-    path: 'producto',
-    component: ProductoComponent
-  },
-  {
-    path: 'productos',
-    component: AllProductsComponent
+    path: 'auth',
+    loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
   },
   {
     path: '**',

@@ -6,7 +6,7 @@
         <a href="/home"><img src="./assets/cross.png" alt="cerrar" /></a>
         <div class="description">
             <h2>Registrarse</h2>
-            <p>¿Ya te encuentras registrado?<a routerLink="/login"> Inicia sesion</a></p>
+            <p>¿Ya te encuentras registrado?<a routerLink="/auth/login"> Inicia sesion</a></p>
         </div>
         <form [formGroup]="formRegister" (ngSubmit)="procesar()" class="form">
             <label for="name" class="form-label">Nombre</label>
