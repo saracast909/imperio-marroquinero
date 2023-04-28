@@ -37,7 +37,7 @@
       <div class="navbar-center">
         <ul class="menu">
           <li>
-            <a href="">TODO</a>
+            <a routerLink="/all-products">TODO</a>
           </li>
           <li *ngFor="let category of categories">
             <a [routerLink]="[category.url]">{{ category.name }}</a>
@@ -69,9 +69,9 @@
   <ul>
     <li>
       <img src="./assets/navbar/menu-mobile/shop.png" alt="Tienda" />
-      <a routerLink="/producto" class="mb-cat-pr">PRODUCTOS</a>
+      <a routerLink="/all-products" class="mb-cat-pr">PRODUCTOS</a>
       <ul>
-        <li class="mb-cat-seg"><a href="">TODO</a></li>
+        <li class="mb-cat-seg"><a routerLink="/all-products">TODO</a></li>
         <li *ngFor="let category of categories; let i = index" class="mb-cat-seg">
           <p (click)="subcategories(i)">{{category.name}}</p>
           <div *ngIf="category.showsubcategories" class="sub-mobile">

@@ -7,15 +7,16 @@
             "precio": "$100.000",
             "category": "Bolsos",
             "subcategory": "Morrales",
+            "image": "./assets/images/product1-11.png",
             "colors": [
                 {
                     "name": "Negro",
                     "color": "#000000",
                     "images": [
-                        "../serve/images/product1-11.png",
-                        "../serve/images/product1-12.png",
-                        "../serve/images/product1-13.png",
-                        "../serve/images/product1-14.png"
+                        "./assets/images/product1-11.png",
+                        "./assets/images/product1-12.png",
+                        "./assets/images/product1-13.png",
+                        "./assets/images/product1-14.png"
                     ],
                     "stock": 10
                 },
@@ -41,6 +42,7 @@
             "precio": "$30.000",
             "category": "Accesorios",
             "subcategory": "Billeteras",
+            "image": "./assets/images/product2-11.png",
             "colors": [
                 {
                     "name": "Negro",
@@ -75,7 +77,8 @@
             "precio": "$25.000",
             "category": "Cinturones",
             "subcategory": "Unifaz",
-            "colores": [
+            "image": "./assets/images/product3-11.png",
+            "colors": [
                 {
                     "name": "Miel",
                     "color": "#D2691E",

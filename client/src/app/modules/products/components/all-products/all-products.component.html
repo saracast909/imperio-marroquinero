@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <div class="contain">
     <aside>
-        <h3>BOLSOS/MORRALES</h3>
+        <h3>TODO</h3>
         <h4>Filtros</h4>
         <div>
             <p class="filter">Precios</p>
@@ -50,16 +50,15 @@
     </aside>
     <section class="container">
         <div class="filtros mb-3 mt-3">
-            <h3>Bolsos/Morrales</h3>
+            <h3>Todos</h3>
             <p>FILTROS</p>
         </div>
         <div class="cards-container">
-            <div class="product-card" *ngFor="let product of products" routerLink="product">
-                <img src="/assets/products/image.png" [src]="product.imagen" [alt]="product.nombre"
-                    class="product-image" />
+            <div class="product-card" *ngFor="let product of allProducts" routerLink="product">
+                <img [src]="product.image" [alt]="product.name" class="product-image" />
                 <div class="product-info">
                     <div>
-                        <p>{{ product.nombre }}</p>
+                        <p>{{ product.name }}</p>
                         <p>{{ product.precio }}</p>
                     </div>
                     <figure>
