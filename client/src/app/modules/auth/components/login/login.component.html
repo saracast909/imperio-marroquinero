@@ -9,23 +9,22 @@
             <p>¿Aun no te has registrado? <a routerLink="/auth/register">Registrate</a></p>
         </div>
 
-        <form [formGroup]="formLogin" (ngSubmit)="procesar()" class="form">
+        <form [formGroup]="formLogin" (ngSubmit)="sendLogin()" class="form">
             <label for="email" class="form-label">Correo electronico</label>
-            <div class="alert alert-danger mb-2" [hidden]="email.valid || email.pristine">
+            <p [hidden]="email.valid || email.pristine" class="message">
                 <span *ngIf="email.errors?.['pattern']">El email debe ser valido.</span>
                 <span *ngIf="email.errors?.['required']">Este campo es obligatorio.</span>
-            </div>
+            </p>
             <input type="email" id="email" class="form-control" formControlName="email" />
+
             <label for="password" class="form-label">Contraseña</label>
-            <div class="alert alert-danger mb-2" [hidden]="password.valid || password.pristine">
-                Este campo es obligatorio.
-            </div>
+            <p [hidden]="password.valid || password.pristine" class="message">Este campo es obligatorio.</p>
             <input type="password" id="password" class="form-control" formControlName="password" />
+
             <a href="/recoverPass">¿Olvidaste tu contraseña?</a>
+
             <div>
-                <button class="btn mt-3" [disabled]="formLogin.invalid">
-                    INGRESAR
-                </button>
+                <button class="btn mt-3" [disabled]="formLogin.invalid">INGRESAR</button>
             </div>
         </form>
     </div>

@@ -41,10 +41,6 @@
     font-weight: bold;
     margin-top: 15px;
 }
-.alert{
-    padding: 10px;
-    font-weight: 600;
-}
 .form-control{
     padding: 9px;
     border: 1px solid var(--black);
@@ -61,6 +57,20 @@
     color: var(--white);
     font-weight: bold;
 } 
+.message{
+    margin: 0 0 5px 0;
+    color: #8B0000;
+    font-weight: bold;
+}
+input.ng-invalid.ng-dirty{
+    border: solid 1.8px #8B0000;
+}
+input.ng-valid{
+    border: solid 1.8px #006400;
+}
+button:disabled{
+    opacity: .7;
+}
 
 @media screen and (min-width: 425px){
     .description, .form{

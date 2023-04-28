@@ -1,35 +1,34 @@
-import { Component } from '@angular/core';
-import { FormControl, Validators, FormBuilder} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
 
-  constructor(private fb: FormBuilder){
-  }
+export class LoginComponent implements OnInit{
 
   get email(){
     return this.formLogin.get('email') as FormControl
   };
   get password(){
     return this.formLogin.get('password') as FormControl
-  };
-
-  formLogin = this.fb.group({
-    'email': ['', [Validators.required, Validators.pattern("^[^ ]+@[^ ]+\.[a-z]{2,6}$")]],
-    'password': ['', Validators.required]
-  })
-
-  procesar(){
-    const dates = {
-      email: this.email.value, 
-      password: this.password.value,
-    };
-
-    console.log(dates)
   }
 
+  formLogin: FormGroup = new FormGroup({});
+
+  ngOnInit(): void {
+    this.formLogin = new FormGroup(
+      {
+        email: new FormControl('', [Validators.required, Validators.pattern("^[^ ]+@[^ ]+\.[a-z]{2,6}$")]),
+        password: new FormControl('', Validators.required)
+      }
+    )
+  }
+
+  sendLogin(): void {
+    const body = this.formLogin.value;
+    console.log(body);
+  }
 }
