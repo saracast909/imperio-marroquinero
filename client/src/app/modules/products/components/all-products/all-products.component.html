@@ -54,16 +54,17 @@
             <p>FILTROS</p>
         </div>
         <div class="cards-container">
-            <div class="product-card" *ngFor="let product of allProducts" routerLink="product">
-                <img [src]="product.image" [alt]="product.name" class="product-image" />
+            <div *ngFor="let product of allProducts" class="product-card" >
+                <div class="product-image" routerLink="product">
+                    <div class="heart"><img src="/assets/products/corazon.png" alt="Corazon"></div>
+                    <img [src]="product.image" [alt]="product.name">
+                </div>
                 <div class="product-info">
+                    <p>{{ product.name }}</p>
                     <div>
-                        <p>{{ product.name }}</p>
                         <p>{{ product.precio }}</p>
+                        <button>Comprar</button>
                     </div>
-                    <figure>
-                        <img src="/assets/products/corazon.png" alt="corazon" />
-                    </figure>
                 </div>
             </div>
         </div>
