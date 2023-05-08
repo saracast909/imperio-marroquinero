@@ -44,7 +44,6 @@ h4{
 .color div{
     width: 24px;
     height: 24px;
-    background-color: aqua;
 }
 .color div:nth-child(1){
     background-color: black;
@@ -68,34 +67,63 @@ h4{
     gap: 10px 30px;
 }
 .product-card{
-    width: 240px;
+    width: 100%;
+    background-color: #F4F4F4;
+}
+.product-image img:nth-child(2){
+    width: 100%;
+    height: 100%;
 }
 .product-image{
-    background-color: rgb(235, 233, 233);
-    padding: 30px;
     width: 100%;
     height: 240px;
     object-fit: fill;
+    position: relative;
+}
+.heart{
+    background: white;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    box-shadow: 2px 1px 5px rgba(1, 1, 1, 25%);
 }
 .product-info{
+    padding: 15px;
+}
+.product-info div{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
 }
-.product-info div p:nth-child(1){
-    font-weight: bold;
-    font-size: 18px;
-    margin: 0;
-}
-.product-info div p:nth-child(2){
+.product-info p{
+    margin-bottom: 12px;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
+}
+.product-info div p{
+    font-weight: bolder;
     margin: 0;
+    font-size: 22px;
+}
+.product-info button{
+    background: var(--primary-color);
+    border: none;
+    color: var(--white);
+    border-radius: 5px;
+    width: 110px;
+    height: 35px;
+    font-weight: bold;
 }
 .filtros{
     display: none;
 }
+
 @media screen and (max-width: 770px){
     .filtros{
         display: flex;
@@ -116,17 +144,24 @@ h4{
         grid-template-columns: repeat(auto-fill, 165px);
         gap: 10px 10px;
     }
-    .product-card{
-        width: 165px;
-    }
     .product-image{
-        width: 165px;
         height: 165px;
     }
-    .product-info div p:nth-child(1){
-        font-size: 14px;
+    .product-info div{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .product-info p{
+        margin: 0;
+    }
+    .product-info div p{
+        margin-bottom: 10px;
+    }
+    .product-info button{
+        width: 100%;
     }
 }
+
 @media screen and (max-width: 425px){
     .cards-container{
         grid-template-columns: repeat(auto-fill, 190px);
@@ -136,10 +171,10 @@ h4{
         width: 190px;
     }
     .product-image{
-        width: 190px;
         height: 190px;
     }
 }
+
 @media screen and (max-width: 375px){
     .cards-container{
         grid-template-columns: repeat(auto-fill, 170px);
@@ -149,10 +184,10 @@ h4{
         width: 170px;
     }
     .product-image{
-        width: 170px;
         height: 170px;
     }
 }
+
 @media screen and (max-width: 320px){
     .cards-container{
         grid-template-columns: repeat(auto-fill, 140px);
@@ -162,7 +197,6 @@ h4{
         width: 140px;
     }
     .product-image{
-        width: 140px;
         height: 140px;
     }
 }

@@ -30,7 +30,6 @@
     75%{margin-top: -72px;}
     100%{margin-top: -72px;}
 }
-
 /* Menu */
 .nav {
     display: block;
@@ -100,6 +99,7 @@ hr{
     border-radius: 4px;
 }
 .navbar-center .submenu{
+    z-index: 3;
     display: none;
     position: absolute;
     left: 0;
@@ -112,7 +112,6 @@ hr{
 .menu-hamburguesa, .navbar-right .bolsa{
     display: none;
 }
-
 /* Menu Mobile */
 .menu-mobile{
     position: absolute;

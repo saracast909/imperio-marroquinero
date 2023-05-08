@@ -1,0 +1,109 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Morral Maqui",
+            "description": "Descripcion de morral maqui",
+            "precio": "$100.000",
+            "category": "Bolsos",
+            "subcategory": "Morrales",
+            "image": "./assets/images/product1-11.png",
+            "colors": [
+                {
+                    "name": "Negro",
+                    "color": "#000000",
+                    "images": [
+                        "./assets/images/product1-11.png",
+                        "./assets/images/product1-12.png",
+                        "./assets/images/product1-13.png",
+                        "./assets/images/product1-14.png"
+                    ],
+                    "stock": 10
+                },
+                {
+                    "name": "Blanco",
+                    "color": "#FFFAFA",
+                    "images": [
+                        "../serve/images/product1-21.png",
+                        "../serve/images/product1-22.png",
+                        "../serve/images/product1-23.png",
+                        "../serve/images/product1-24.png"
+                    ],
+                    "stock": 10
+                }
+            ],
+            "details": "",
+            "cares": ""
+        },
+        {
+            "id": 2,
+            "name": "Billetera Nev",
+            "description": "Descripcion de billetera nev",
+            "precio": "$30.000",
+            "category": "Accesorios",
+            "subcategory": "Billeteras",
+            "image": "./assets/images/product2-11.png",
+            "colors": [
+                {
+                    "name": "Negro",
+                    "color": "#000000",
+                    "images": [
+                        "../serve/images/product2-11.png",
+                        "../serve/images/product2-12.png",
+                        "../serve/images/product2-13.png",
+                        "../serve/images/product2-14.png"
+                    ],
+                    "stock": 10
+                },
+                {
+                    "name": "Red",
+                    "color": "#800000",
+                    "images": [
+                        "../serve/images/product2-21.png",
+                        "../serve/images/product2-22.png",
+                        "../serve/images/product2-23.png",
+                        "../serve/images/product2-24.png"
+                    ],
+                    "stock": 10
+                }
+            ],
+            "details": "",
+            "cares": ""
+        },
+        {
+            "id": 3,
+            "name": "Cinturon Hera",
+            "description": "Descripcion de cinturon hera",
+            "precio": "$25.000",
+            "category": "Cinturones",
+            "subcategory": "Unifaz",
+            "image": "./assets/images/product3-11.png",
+            "colors": [
+                {
+                    "name": "Miel",
+                    "color": "#D2691E",
+                    "images": [
+                        "../serve/images/product3-11.png",
+                        "../serve/images/product3-12.png",
+                        "../serve/images/product3-13.png",
+                        "../serve/images/product3-14.png"
+                    ],
+                    "stock": 10
+                },
+                {
+                    "name": "Negro",
+                    "color": "#000000",
+                    "images": [
+                        "../serve/images/product3-21.png",
+                        "../serve/images/product3-22.png",
+                        "../serve/images/product3-23.png",
+                        "../serve/images/product3-24.png"
+                    ],
+                    "stock": 10
+                }
+            ],
+            "details": "",
+            "cares": ""
+        }
+    ]
+}
