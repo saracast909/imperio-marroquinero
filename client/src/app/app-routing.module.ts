@@ -16,6 +16,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
   },
   {
+    path: 'payments',
+    loadChildren: () => import('./modules/payments/payments.module').then(m => m.PaymentsModule)
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   }

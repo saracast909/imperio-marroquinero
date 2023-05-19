@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ProductService } from 'src/app/services/product.service';
 import * as dataProducts from '../../../../data/products.json'
 
 @Component({
@@ -9,10 +9,16 @@ import * as dataProducts from '../../../../data/products.json'
 })
 export class AllProductsComponent implements OnInit{
 
+  constructor(private productService: ProductService) {}
+
   allProducts: Array<any> = []
 
   ngOnInit(): void {
     const {data} : any = (dataProducts as any).default
     this.allProducts = data;
+  }
+
+  addToCart(product: any){
+    return this.productService.addProduct(product)
   }
 }

@@ -1,0 +1,235 @@
+<i onClick="history.go(-1);" class="fa-solid fa-xmark close"></i>
+
+<mat-stepper labelPosition="bottom" >
+  <!-- Paso 1 -->
+  <mat-step label="Productos" state="products">
+    <div class="container-step">
+      <div>
+        <p class="section-title">Carrito de Compras</p>
+        <div class="container-cards">
+          <div class="card-product" *ngFor="let product of myCart$ | async">
+            <div>
+              <div class="container-image">
+                <img [src]="product.image" [alt]="product.name" />
+              </div>
+              <div class="description">
+                <p>{{ product.name }}</p>
+                <p>$ {{ totalProduct(product.precio, product.cantidad) }}</p>
+                <div class="cantidad">
+                  <p>
+                    Cantidad: <span>{{ product.cantidad }}</span>
+                  </p>
+                  <div>
+                    <i class="fa-solid fa-circle-minus" (click)="update('minus', product.id)"></i>
+                    <i class="fa-solid fa-circle-plus" (click)="update('add', product.id)"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <i (click)="delete(product.id)" class="fa-solid fa-trash-can"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="resume">
+        <p>RESUMEN</p>
+        <div class="precios">
+          <p>Subtotal</p>
+          <p>$ {{ totalcart() }}</p>
+        </div>
+        <hr />
+        <div class="precios">
+          <p>Total</p>
+          <p>$ {{ totalcart() }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-button">
+      <button matStepperNext class="button-primary" >Siguiente</button>
+    </div>
+  </mat-step>
+  <!-- Paso 2 -->
+  <mat-step label="Datos de Envio" state="ubication">
+    <div class="container-step">
+      <div>
+        <p class="section-title">Datos de envio</p>
+        <div>
+          <form [formGroup]="shippingForm" class="row g-3">
+            <div class="col-md-6">
+              <label for="name" class="form-label">Nombre</label>
+              <input type="text" id="name" formControlName="name"  class="form-control" autocomplete="name" />
+            </div>
+            <div class="col-md-6">
+              <label for="apellido" class="form-label">Apellido</label>
+              <input type="text" class="form-control" id="apellido" formControlName="lastName" />
+            </div>
+            <div class="col-md-6">
+              <label for="dni" class="form-label">DNI</label>
+              <input type="text" class="form-control" id="dni" formControlName="dni" placeholder="ej: 11110954311"/>
+            </div>
+            <div class="col-md-6">
+              <label for="telefono" class="form-label">Telefono</label>
+              <input type="text" class="form-control" id="telefono" formControlName="telefono" placeholder="ej: 3232271628"/>
+            </div>
+            <div class="col-md-6">
+              <label for="pais" class="form-label">Pais</label>
+              <select id="pais" class="form-select" formControlName="pais">
+                <option value="colombia">Colombia</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="ciudad" class="form-label">Ciudad</label>
+              <select id="ciudad" class="form-select" formControlName="ciudad">
+                <option value="bogota">Bogota</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label for="calle" class="form-label">Calle</label>
+              <select name="" id="calle" formControlName="calle" class="form-select">
+                <option value="Avenida">Avenida</option>
+                <option value="Calle">Calle</option>
+                <option value="Carrera">Carrera</option>
+                <option value="Circular">Circular</option>
+              </select>
+            </div>
+            <div class="col-md-10">
+              <label for="calle" class="form-label">Dirección</label>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="29B" formControlName="numberOne"/>
+                <span class="input-group-text">#</span>
+                <input type="text" class="form-control" id="numberTwo" placeholder="14" formControlName="numberTwo"/>
+                <span class="input-group-text">-</span>
+                <input type="text" class="form-control" id="numberThree" placeholder="552" formControlName="numberThree"/>
+              </div>
+            </div>
+            <div class="col-12">
+              <label for="info" class="form-label">Información Adicional</label>
+              <input type="text" class="form-control" id="info" formControlName="info" placeholder="ej: Apto 201"/>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="resume">
+        <p>RESUMEN</p>
+        <div class="precios">
+          <p>Subtotal</p>
+          <p>$ {{ totalcart() }}</p>
+        </div>
+        <div class="precios">
+          <p>Envio</p>
+          <p>$0</p>
+        </div>
+        <hr />
+        <div class="precios">
+          <p>Total</p>
+          <p>$ {{ totalcart() }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-button">
+      <button matStepperPrevious class="button-secondary">Anterior</button>
+      <button matStepperNext class="button-primary">Siguiente</button>
+    </div>
+  </mat-step>
+  <!-- Paso 3 -->
+  <mat-step label="Datos de pago" state="pay">
+    <div class="container-step">
+      <div>
+      <p class="section-title">Datos de pago.</p>
+      <h5>Cupon de descuento</h5>
+      <form class="row g-3">
+        <div class="col-md-6">
+          <label for="cod" class="form-label">Ingresa el codigo de descuento</label>
+          <input type="text" id="cod" class="form-control"/>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-dark">USAR CUPON</button>
+        </div>
+        
+      </form>
+      <h5>Datos de pago</h5>
+      <form class="row g-3">
+        <div class="col-12">
+          <label for="name-tarj" class="form-label">Nombre en la tarjeta</label>
+          <input type="text" id="name-tarj" class="form-control"/>
+        </div>
+        <div class="col-md-6">
+          <label for="number-tarj" class="form-label">Numero en la tarjeta</label>
+          <input type="text" id="number-tarj" class="form-control"/>
+        </div>
+        <div class="col-md-3">
+          <label for="month-exp" class="form-label">Mes de expiración</label>
+          <select name="" id="month-exp" class="form-select">
+            <option value="">01</option>
+            <option value="">02</option>
+            <option value="">03</option>
+            <option value="">04</option>
+            <option value="">05</option>
+            <option value="">06</option>
+            <option value="">07</option>
+            <option value="">08</option>
+            <option value="">09</option>
+            <option value="">10</option>
+            <option value="">11</option>
+            <option value="">12</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label for="year-exp" class="form-label">Año de expiración</label>
+          <input type="text" id="year-exp" class="form-control"/>
+        </div>
+      </form>
+    </div>
+
+    <div class="resume">
+      <p>RESUMEN</p>
+      <div class="precios">
+        <p>Subtotal</p>
+        <p>$ {{ totalcart() }}</p>
+      </div>
+      <div class="precios">
+        <p>Envio</p>
+        <p>$0</p>
+      </div>
+      <hr />
+      <div class="precios">
+        <p>Total</p>
+        <p>$ {{ totalcart() }}</p>
+      </div>
+    </div>
+  </div>
+  
+    <div class="container-button">
+      <button matStepperPrevious class="button-secondary">Anterior</button>
+      <button matStepperNext class="button-primary">Comprar</button>
+    </div>
+  </mat-step>
+  <mat-step label="Listo" state="check">
+    <p>Listo.</p>
+    <div class="container-button">
+      <button matStepperPrevious class="button-secondary">Anterior</button>
+      <button class="button-primary">Terminar compra</button>
+    </div>
+  </mat-step>
+
+  <!-- Icon overrides. -->
+  <ng-template matStepperIcon="products">
+    <i class="fa-solid fa-bag-shopping"></i>
+  </ng-template>
+  <ng-template matStepperIcon="ubication">
+    <i class="fa-solid fa-location-dot"></i>
+  </ng-template>
+  <ng-template matStepperIcon="pay">
+    <i class="fa-solid fa-dollar-sign"></i>
+  </ng-template>
+  <ng-template matStepperIcon="check">
+    <i class="fa-regular fa-circle-check"></i>
+  </ng-template>
+  <ng-template matStepperIcon="done">
+    <i class="fa-solid fa-check"></i>
+  </ng-template>
+
+</mat-stepper>
