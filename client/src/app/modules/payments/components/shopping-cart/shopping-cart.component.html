@@ -1,0 +1,34 @@
+<section>
+  <div class="top">
+    <p>Mi pedido</p>
+    <i class="bi bi-x-lg" (click)="onCloseCart()"></i>
+  </div>
+  <div class="content-cards">
+    <div class="card-product" *ngFor="let product of myCart$ | async">
+      <div>
+        <div class="container-image">
+          <img [src]="product.image" [alt]="product.name" />
+        </div>
+        <div class="description">
+          <p>{{ product.name }}</p>
+          <p>${{product.precio}}</p>
+          <div class="cantidad">
+            <p>Cantidad: <span>{{ product.cantidad }}</span></p>
+            <div>
+              <i class="bi bi-dash-circle-fill" (click)="update('minus', product.id)"></i>
+              <i class="bi bi-plus-circle-fill" (click)="update('add', product.id)"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <i class="bi bi-trash3" (click)="delete(product.id)"></i>
+    </div>
+  </div>
+  <div class="bottom">
+    <div>
+      <p>Subtotal: <b>${{totalcart()}}</b></p>
+      <p>Articulos: <b>{{totalproducts()}}</b></p>
+    </div>
+    <button routerLink="/payments">CONTINUAR</button>
+  </div>
+</section>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
 })
 
 export class NavbarComponent {
+
   menuopen : boolean = false
   menu : boolean = false
   submenu : boolean = false
@@ -112,5 +114,18 @@ export class NavbarComponent {
 
   subcategories(index: number){
     this.categories[index].showsubcategories = !this.categories[index].showsubcategories;
+  }
+
+  viewCart: boolean = false;
+
+  onCloseCart() {
+    this.viewCart = false;
+  }
+
+  constructor(private productService: ProductService) {}
+
+  totalproducts(){
+    const result = this.productService.totalproducts()
+    return result
   }
 }

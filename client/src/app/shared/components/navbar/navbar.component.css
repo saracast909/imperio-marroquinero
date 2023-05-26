@@ -193,6 +193,20 @@ hr{
 .sub-mobile div{
     width: 80%;
 }
+
+app-shopping-cart{
+    display: flex;
+    background-color: var(--white);
+    width: 30%;
+    height: 100vh;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    padding: 20px;
+}
+
 @media screen and (max-width: 768px) {
     .first-nav .navbar-left .divisas, 
     .first-nav .navbar-right .social-media, 
@@ -209,5 +223,17 @@ hr{
     }
     .form-select-sm{
         font-size: 1.2rem;
+    }
+}
+@media screen and (max-width: 1000px) {
+    app-shopping-cart{
+        width: 50%;
+        padding: 20px 12px;
+    }
+}
+@media screen and (max-width: 625px) {
+    app-shopping-cart{
+        width: 100%;
+        padding: 20px 12px;
     }
 }

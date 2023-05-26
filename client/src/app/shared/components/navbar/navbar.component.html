@@ -24,7 +24,7 @@
         <a href="http://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-media"><img src="./assets/navbar/tik-tok.png" alt="TikTok"/></a>
         <ul class="bolsa">
           <li>
-            <a href=""><img src="./assets/navbar/shopping-bag.png" alt="Compra"/></a>
+            <a (click)="viewCart = !viewCart"><i matBadge={{totalproducts()}}  class="bi bi-bag"></i></a>
           </li>
         </ul>
       </div>
@@ -58,7 +58,7 @@
             <a routerLink="/auth/login"><img src="./assets/navbar/user.png" alt="Usuario"/></a>
           </li>
           <li>
-            <a href=""><img src="./assets/navbar/shopping-bag.png" alt="Compra"/></a>
+            <a (click)="viewCart = !viewCart"><i matBadge={{totalproducts()}}  class="bi bi-bag"></i></a>
           </li>
         </ul>
       </div>
@@ -115,3 +115,5 @@
     </select>
   </div>
 </div>
+
+<app-shopping-cart *ngIf="viewCart" (closeCart)="onCloseCart()"></app-shopping-cart>

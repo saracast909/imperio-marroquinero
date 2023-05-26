@@ -5,6 +5,8 @@ import { ProductsRoutingModule } from './products-routing.module';
 import { SharedModule } from '@shared/shared.module';
 import { ProductoComponent } from './components/producto/producto.component';
 import { AllProductsComponent } from './components/all-products/all-products.component';
+import { ProductService } from 'src/app/services/product.service';
+
 
 
 @NgModule({

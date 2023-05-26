@@ -4,7 +4,7 @@
             "id": 1,
             "name": "Morral Maqui",
             "description": "Descripcion de morral maqui",
-            "precio": "$100.000",
+            "precio": 100000,
             "category": "Bolsos",
             "subcategory": "Morrales",
             "image": "./assets/images/product1-11.png",
@@ -39,7 +39,7 @@
             "id": 2,
             "name": "Billetera Nev",
             "description": "Descripcion de billetera nev",
-            "precio": "$30.000",
+            "precio": 30000,
             "category": "Accesorios",
             "subcategory": "Billeteras",
             "image": "./assets/images/product2-11.png",
@@ -74,7 +74,147 @@
             "id": 3,
             "name": "Cinturon Hera",
             "description": "Descripcion de cinturon hera",
-            "precio": "$25.000",
+            "precio": 25000,
+            "category": "Cinturones",
+            "subcategory": "Unifaz",
+            "image": "./assets/images/product3-11.png",
+            "colors": [
+                {
+                    "name": "Miel",
+                    "color": "#D2691E",
+                    "images": [
+                        "../serve/images/product3-11.png",
+                        "../serve/images/product3-12.png",
+                        "../serve/images/product3-13.png",
+                        "../serve/images/product3-14.png"
+                    ],
+                    "stock": 10
+                },
+                {
+                    "name": "Negro",
+                    "color": "#000000",
+                    "images": [
+                        "../serve/images/product3-21.png",
+                        "../serve/images/product3-22.png",
+                        "../serve/images/product3-23.png",
+                        "../serve/images/product3-24.png"
+                    ],
+                    "stock": 10
+                }
+            ],
+            "details": "",
+            "cares": ""
+        },
+        {
+            "id": 4,
+            "name": "Cinturon Hera",
+            "description": "Descripcion de cinturon hera",
+            "precio": 25000,
+            "category": "Cinturones",
+            "subcategory": "Unifaz",
+            "image": "./assets/images/product3-11.png",
+            "colors": [
+                {
+                    "name": "Miel",
+                    "color": "#D2691E",
+                    "images": [
+                        "../serve/images/product3-11.png",
+                        "../serve/images/product3-12.png",
+                        "../serve/images/product3-13.png",
+                        "../serve/images/product3-14.png"
+                    ],
+                    "stock": 10
+                },
+                {
+                    "name": "Negro",
+                    "color": "#000000",
+                    "images": [
+                        "../serve/images/product3-21.png",
+                        "../serve/images/product3-22.png",
+                        "../serve/images/product3-23.png",
+                        "../serve/images/product3-24.png"
+                    ],
+                    "stock": 10
+                }
+            ],
+            "details": "",
+            "cares": ""
+        },
+        {
+            "id": 5,
+            "name": "Cinturon Hera",
+            "description": "Descripcion de cinturon hera",
+            "precio": 25000,
+            "category": "Cinturones",
+            "subcategory": "Unifaz",
+            "image": "./assets/images/product3-11.png",
+            "colors": [
+                {
+                    "name": "Miel",
+                    "color": "#D2691E",
+                    "images": [
+                        "../serve/images/product3-11.png",
+                        "../serve/images/product3-12.png",
+                        "../serve/images/product3-13.png",
+                        "../serve/images/product3-14.png"
+                    ],
+                    "stock": 10
+                },
+                {
+                    "name": "Negro",
+                    "color": "#000000",
+                    "images": [
+                        "../serve/images/product3-21.png",
+                        "../serve/images/product3-22.png",
+                        "../serve/images/product3-23.png",
+                        "../serve/images/product3-24.png"
+                    ],
+                    "stock": 10
+                }
+            ],
+            "details": "",
+            "cares": ""
+        },
+        {
+            "id": 6,
+            "name": "Cinturon Hera",
+            "description": "Descripcion de cinturon hera",
+            "precio": 25000,
+            "category": "Cinturones",
+            "subcategory": "Unifaz",
+            "image": "./assets/images/product3-11.png",
+            "colors": [
+                {
+                    "name": "Miel",
+                    "color": "#D2691E",
+                    "images": [
+                        "../serve/images/product3-11.png",
+                        "../serve/images/product3-12.png",
+                        "../serve/images/product3-13.png",
+                        "../serve/images/product3-14.png"
+                    ],
+                    "stock": 10
+                },
+                {
+                    "name": "Negro",
+                    "color": "#000000",
+                    "images": [
+                        "../serve/images/product3-21.png",
+                        "../serve/images/product3-22.png",
+                        "../serve/images/product3-23.png",
+                        "../serve/images/product3-24.png"
+                    ],
+                    "stock": 10
+                }
+            ],
+            "details": "",
+            "cares": ""
+        },
+        {
+            "id": 7,
+            "name": "Cinturon Hera",
+            "description": "Descripcion de cinturon hera",
+            "precio": 25000,
             "category": "Cinturones",
             "subcategory": "Unifaz",
             "image": "./assets/images/product3-11.png",

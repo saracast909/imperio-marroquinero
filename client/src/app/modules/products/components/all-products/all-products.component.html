@@ -62,8 +62,8 @@
                 <div class="product-info">
                     <p>{{ product.name }}</p>
                     <div>
-                        <p>{{ product.precio }}</p>
-                        <button>Comprar</button>
+                        <p>$ {{ product.precio }}</p>
+                        <button (click)="addToCart(product)">Comprar</button>
                     </div>
                 </div>
             </div>
