@@ -54,8 +54,8 @@
             <p>FILTROS</p>
         </div>
         <div class="cards-container">
-            <div *ngFor="let product of allProducts" class="product-card" >
-                <div class="product-image" routerLink="product">
+            <div *ngFor="let product of allProducts, index as i" class="product-card" >
+                <div class="product-image" [routerLink]="['product', i]">
                     <div class="heart"><img src="/assets/products/corazon.png" alt="Corazon"></div>
                     <img [src]="product.image" [alt]="product.name">
                 </div>

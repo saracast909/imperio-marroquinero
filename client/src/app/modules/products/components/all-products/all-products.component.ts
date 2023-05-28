@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
-import * as dataProducts from '../../../../data/products.json'
 
 @Component({
   selector: 'app-all-products',
@@ -8,17 +8,16 @@ import * as dataProducts from '../../../../data/products.json'
   styleUrls: ['./all-products.component.css']
 })
 export class AllProductsComponent implements OnInit{
+ 
+  allProducts: any[] = [];
 
-  constructor(private productService: ProductService) {}
-
-  allProducts: Array<any> = []
+  constructor(private cartService: CartService, private productService: ProductService) {}
 
   ngOnInit(): void {
-    const {data} : any = (dataProducts as any).default
-    this.allProducts = data;
+    this.allProducts = this.productService.obtenerProductos()
   }
 
   addToCart(product: any){
-    return this.productService.addProduct(product)
+    return this.cartService.addProduct(product)
   }
 }

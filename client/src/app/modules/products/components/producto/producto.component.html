@@ -1,55 +1,48 @@
 <app-navbar></app-navbar>
 <section>
     <div class="photos">
-        <div (click)="img = './assets/product/billetera.png'"><img src="./assets/product/billetera.png" alt="Billetera"></div>
-        <div (click)="img = './assets/product/billetera2.png'"><img src="./assets/product/billetera2.png" alt="Billetera"></div>
-        <div (click)="img = './assets/product/billetera.png'"><img src="./assets/product/billetera.png" alt="Billetera"></div>
-        <div (click)="img = './assets/product/billetera2.png'"><img src="./assets/product/billetera2.png" alt="Billetera"></div>
+        <div (click)="img = image" *ngFor="let image of product.colors[0].images">
+          <img [src]=image [alt]="product.name">
+        </div>
     </div>
     <div class="product-photo">
-        <img [src]='img' alt="Billetera">
+        <img [src]='img' [alt]="product.name">
     </div>
     <div class="product-description">
-        <p class="category-product">BILLETERAS HOMBRE</p>
-        <h3 class="product-name">Billetera formas</h3>
-        <p class="price">$20.000</p>
-        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quibusdam dolorum beatae possimus atque vel minima officiis aperiam nemo, deleniti modi reprehenderit, eveniet, voluptas officia ipsum.</p>
+        <p class="category-product">{{product.category}} {{product.subcategory}}</p>
+        <h3 class="product-name">{{product.name}}</h3>
+        <p class="price">${{product.precio}}</p>
+        <p class="description">{{product.description}}</p>
         <div class="product-colors">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div *ngFor="let color of product.colors" [style.background]="color.color"></div>
         </div>
-        <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                  DETALLES DEL PRODUCTO
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-                <div class="accordion-body">
-                  <ul>
-                    <li>Cuero con apliques en Mola.</li>
-                    <li>Múltiples ranuras para tarjetas y espacio para billetes.</li>
-                    <li>Altura 10cm</li>
-                    <li>Ancho 15cm</li>
-                  </ul>
-                </div>
+        <div class="accordion" id="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                DETALLES DEL PRODUCTO
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordion">
+              <div class="accordion-body">
+                <ul>
+                  <li *ngFor="let detail of product.details">{{detail}}</li>
+                </ul>
               </div>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                  CUIDADOS
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  <p>No mojar ni exponer al sol. Limpiar con un paño húmedo suave</p>
-                </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                CUIDADOS
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordion">
+              <div class="accordion-body">
+                <p>{{product.cares}}</p>
               </div>
             </div>
+          </div>
         </div>
         <button class="btn">AGREGAR AL CARRITO</button>
     </div>

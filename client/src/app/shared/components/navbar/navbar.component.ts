@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ProductService } from 'src/app/services/product.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-navbar',
@@ -122,10 +122,10 @@ export class NavbarComponent {
     this.viewCart = false;
   }
 
-  constructor(private productService: ProductService) {}
+  constructor(private cartService: CartService) {}
 
   totalproducts(){
-    const result = this.productService.totalproducts()
+    const result = this.cartService.totalproducts()
     return result
   }
 }

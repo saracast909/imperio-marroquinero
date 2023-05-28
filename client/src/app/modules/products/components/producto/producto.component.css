@@ -45,6 +45,7 @@ section{
 }
 .category-product{
     font-size: 14px;
+    text-transform: uppercase;
 }
 .product-name{
     font-size: 25px;
@@ -65,20 +66,11 @@ section{
 .product-colors div{
     width: 30px;
     height: 30px;
+    border: 2px solid rgb(241, 237, 237);
 }
 .product-colors div:nth-child(1){
-    background-color: #E57B48;
     border: 2px solid cornsilk;
     box-shadow: 0px 0px 2px 1px gainsboro;
-}
-.product-colors div:nth-child(2){
-    background-color: #700F1D;
-}
-.product-colors div:nth-child(3){
-    background-color: #0A0B0B;
-}
-.product-colors div:nth-child(4){
-    background-color: #FE7A08;
 }
 .btn{
     background: var(--black);

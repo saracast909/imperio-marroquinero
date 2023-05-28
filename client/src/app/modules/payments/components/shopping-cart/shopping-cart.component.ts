@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { ProductService } from 'src/app/services/product.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -14,20 +14,20 @@ export class ShoppingCartComponent {
     this.closeCart.emit();
   }
 
-  myCart$ = this.productService.myCart$
+  myCart$ = this.cartService.myCart$
   
-  constructor(private productService: ProductService) {}
+  constructor(private cartService: CartService) {}
   
   totalProduct(price: number, units: number){
     return price * units
   }
 
   delete(id:number){
-    this.productService.delete(id)
+    this.cartService.delete(id)
   }
 
   update(operation:string, id:number){
-    const product = this.productService.findproduct(id)
+    const product = this.cartService.findproduct(id)
 
     if(product){
       if(operation === 'minus' && product.cantidad > 0){
@@ -43,12 +43,12 @@ export class ShoppingCartComponent {
   }
 
   totalcart(){
-    const result = this.productService.totalcart()
+    const result = this.cartService.totalcart()
     return result
   }
 
   totalproducts(){
-    const result = this.productService.totalproducts()
+    const result = this.cartService.totalproducts()
     return result
   }
 }

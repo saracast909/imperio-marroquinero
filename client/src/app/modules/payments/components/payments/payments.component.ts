@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup} from '@angular/forms';
-import { ProductService } from 'src/app/services/product.service';
+import { CartService } from 'src/app/services/cart.service';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 
 @Component({
@@ -39,20 +39,20 @@ export class PaymentsComponent implements OnInit{
   }
 
   // Carrito
-  myCart$ = this.productService.myCart$
+  myCart$ = this.cartService.myCart$
   
-  constructor(private productService: ProductService) {}
+  constructor(private cartService: CartService) {}
 
   totalProduct(price: number, units: number){
     return price * units
   }
 
   delete(id:number){
-    this.productService.delete(id)
+    this.cartService.delete(id)
   }
 
   update(operation:string, id:number){
-    const product = this.productService.findproduct(id)
+    const product = this.cartService.findproduct(id)
 
     if(product){
       if(operation === 'minus' && product.cantidad > 0){
@@ -68,7 +68,7 @@ export class PaymentsComponent implements OnInit{
   }
 
   totalcart(){
-    const result = this.productService.totalcart()
+    const result = this.cartService.totalcart()
     return result
   }
 }

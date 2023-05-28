@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-producto',
@@ -6,5 +8,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./producto.component.css']
 })
 export class ProductoComponent {
-  img: string = './assets/product/billetera.png';
+  
+  product: any = {}
+  img: string = ''
+
+
+  constructor(
+    private ruta:ActivatedRoute,
+    private productService:ProductService
+  ){
+    this.ruta.params.subscribe(params=>{
+      this.product = this.productService.obtenerProducto(params['id'])
+    })
+
+    this.img = this.product.image;
+  }
+
+
+
+
 }
