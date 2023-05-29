@@ -1,0 +1,36 @@
+<section class="sidebar">
+    <ul>
+        <div>
+            <li><i class="fi fi-rs-user"></i><a routerLink="/user">Perfil</a></li>
+            <li><i class="fi fi-rs-gift"></i><a routerLink="">Regalos</a></li>
+            <li><i class="fi fi-rs-bags-shopping"></i><a routerLink="">Pedidos</a></li>
+            <li><i class="fi fi-rs-heart"></i><a routerLink="favorites">Lista de Deseos</a></li>
+            <li><i class="fi fi-rs-settings"></i><a routerLink="">Configuración</a></li>
+        </div>
+        <div>
+            <li><i class="fi fi-rs-interrogation"></i><a routerLink="">Ayuda</a></li>
+            <li><i class="fi fi-bs-power"></i><a routerLink="">Cerrar Sesión</a></li>
+        </div>
+    </ul>
+</section>
+
+<section class="sidebar-mobile" (click)="sidebar = !sidebar">
+    <p>Perfil</p>
+    <i class="fi fi-rs-angle-down"></i>
+
+</section>
+<div class="options" *ngIf="sidebar">
+    <ul>
+        <div>
+            <li><i class="fi fi-rs-user"></i><a routerLink="/user">Perfil</a></li>
+            <li><i class="fi fi-rs-gift"></i><a routerLink="">Regalos</a></li>
+            <li><i class="fi fi-rs-bags-shopping"></i><a routerLink="">Pedidos</a></li>
+            <li><i class="fi fi-rs-heart"></i><a routerLink="favorites">Lista de Deseos</a></li>
+            <li><i class="fi fi-rs-settings"></i><a routerLink="">Configuración</a></li>
+        </div>
+        <div>
+            <li><i class="fi fi-rs-interrogation"></i><a routerLink="">Ayuda</a></li>
+            <li><i class="fi fi-bs-power"></i><a routerLink="">Cerrar Sesión</a></li>
+        </div>
+    </ul>
+</div>
