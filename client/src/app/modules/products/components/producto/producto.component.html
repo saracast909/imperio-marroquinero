@@ -44,7 +44,11 @@
             </div>
           </div>
         </div>
-        <button class="btn">AGREGAR AL CARRITO</button>
+        <button *ngIf="product.colors[0].stock > 0" class="btn" (click)="addToCart(product)">AGREGAR AL CARRITO</button>
+        <div *ngIf="product.colors[0].stock == 0" class="stock">
+          <p>En este momento no hay stock ¡Trabajamos para volver a tenerlo!</p>
+          <button class="btn btn-stock" (click)="enviarMail(product.name)">AVISAME CUANDO HAYA STOCK</button>
+        </div>
     </div>
 </section>
 <!-- <app-footer></app-footer> -->

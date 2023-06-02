@@ -19,12 +19,12 @@
         <a routerLink="/home"><img src="./assets/logo.png" alt="Logo" id="logo"/></a>
       </div>
       <div class="navbar-right">
-        <a href="http://facebook.com" target="_blank" rel="noopener noreferrer" class="social-media"><img src="./assets/navbar/facebook.png" alt="Facebook"/></a>
-        <a href="http://instagram.com" target="_blank" rel="noopener noreferrer" class="social-media"><img src="./assets/navbar/instagram.png" alt="Instagram"/></a>
-        <a href="http://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-media"><img src="./assets/navbar/tik-tok.png" alt="TikTok"/></a>
+        <a href="http://facebook.com" target="_blank" rel="noopener noreferrer" class="social-media"><i class="fi fi-brands-facebook"></i></a>
+        <a href="http://instagram.com" target="_blank" rel="noopener noreferrer" class="social-media"><i class="fi fi-brands-instagram"></i></a>
+        <a href="http://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-media"><i class="fi fi-brands-tik-tok"></i></a>
         <ul class="bolsa">
           <li>
-            <a (click)="viewCart = !viewCart"><i matBadge={{totalproducts()}}  class="bi bi-bag"></i></a>
+            <a (click)="viewCart = !viewCart"><i matBadge={{totalproducts()}} class="fi fi-bs-shopping-bag"></i></a>
           </li>
         </ul>
       </div>
@@ -52,10 +52,10 @@
       <div class="navbar-right">
         <ul>
           <li>
-            <a href=""><img src="./assets/navbar/heart.png" alt="Corazon"/></a>
+            <a href=""><i class="fi fi-bs-heart"></i></a>
           </li>
           <li>
-            <a routerLink="/auth/login"><img src="./assets/navbar/user.png" alt="Usuario"/></a>
+            <a routerLink="/auth/login"><i class="fi fi-bs-user"></i></a>
           </li>
           <li>
             <a (click)="viewCart = !viewCart"><i matBadge={{totalproducts()}}  class="bi bi-bag"></i></a>

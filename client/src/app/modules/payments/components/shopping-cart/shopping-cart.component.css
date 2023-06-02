@@ -99,6 +99,18 @@ section{
     height: 35%;
     border-radius: 5px;
 }
+.empty{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.btn-empty{
+    background-color: var(--primary-color);
+    color: var(--white);
+    height: 45px;
+    width: 75%;
+}
 
 @media screen and (max-width: 620px) {
     .card-product > div {

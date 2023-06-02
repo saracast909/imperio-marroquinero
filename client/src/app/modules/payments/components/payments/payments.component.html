@@ -1,4 +1,4 @@
-<i onClick="history.go(-1);" class="fa-solid fa-xmark close"></i>
+<i onClick="history.go(-1);" class="fi fi-rs-cross"></i>
 
 <mat-stepper labelPosition="bottom" >
   <!-- Paso 1 -->
@@ -20,13 +20,13 @@
                     Cantidad: <span>{{ product.cantidad }}</span>
                   </p>
                   <div>
-                    <i class="fa-solid fa-circle-minus" (click)="update('minus', product.id)"></i>
-                    <i class="fa-solid fa-circle-plus" (click)="update('add', product.id)"></i>
+                    <i class="fi fi-ss-minus-circle" (click)="update('minus', product.id)"></i>
+                    <i class="fi fi-ss-add" (click)="update('add', product.id)"></i>
                   </div>
                 </div>
               </div>
             </div>
-            <i (click)="delete(product.id)" class="fa-solid fa-trash-can"></i>
+            <i (click)="delete(product.id)" class="fi fi-rs-trash"></i>
           </div>
         </div>
       </div>

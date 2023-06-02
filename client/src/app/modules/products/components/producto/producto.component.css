@@ -78,7 +78,14 @@ section{
     border-radius: 2px;
     height: 2.8rem;
 }
-
+.stock{
+    padding: 20px 0;
+}
+.btn-stock{
+    background: rgba(51, 23, 11, 80%);
+    width: 100%;
+    margin-top: 10px;
+}
 @media screen and (max-width: 768px) {
     section{
         width: 100%;
