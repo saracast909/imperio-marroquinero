@@ -1,1 +1,21 @@
-<p>gifts works!</p>
+<div class="wrapper">
+    <app-navbar></app-navbar>
+    <app-sidebar></app-sidebar>
+    <div class="content">
+        <h3 class="title">Mis regalos</h3>
+        <div class="container-cards">
+            <div class="gift-card" *ngFor="let gift of gifts">
+                <h5>{{gift.name}}</h5>
+                <div>
+                    <p>{{gift.descripcion}}</p>
+                    <p>Codigo: {{gift.codigo}}</p>
+                </div>
+                <div>
+                    <p>*{{gift.finicio}} - {{gift.ffinal}}</p>
+                    <p>*{{gift.paplica}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>
