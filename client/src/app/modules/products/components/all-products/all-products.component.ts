@@ -20,4 +20,6 @@ export class AllProductsComponent implements OnInit{
   addToCart(product: any){
     return this.cartService.addProduct(product)
   }
+
+  fav: boolean = false
 }

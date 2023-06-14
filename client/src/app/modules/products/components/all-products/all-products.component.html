@@ -55,14 +55,14 @@
         </div>
         <div class="cards-container">
             <div *ngFor="let product of allProducts, index as i" class="product-card" >
-                <div class="product-image" [routerLink]="['product', i]">
-                    <div class="heart"><img src="/assets/products/corazon.png" alt="Corazon"></div>
-                    <img [src]="product.image" [alt]="product.name">
+                <div class="product-image">
+                    <div class="heart" (click)="fav = !fav"><img [src]="fav ? 'assets/products/heart.png' : '/assets/products/corazon.png' " alt="Corazon"></div>
+                    <img [src]="product.image" [alt]="product.name" [routerLink]="['product', i]">
                 </div>
                 <div class="product-info">
                     <p>{{ product.name }}</p>
                     <div>
-                        <p>$ {{ product.precio }}</p>
+                        <p>{{ product.precio | currency:'':'symbol':'0.0-0' }}</p>
                         <button (click)="addToCart(product)">Comprar</button>
                     </div>
                 </div>

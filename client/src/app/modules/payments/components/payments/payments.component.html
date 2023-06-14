@@ -14,7 +14,7 @@
               </div>
               <div class="description">
                 <p>{{ product.name }}</p>
-                <p>$ {{ totalProduct(product.precio, product.cantidad) }}</p>
+                <p>{{ totalProduct(product.precio, product.cantidad) | currency:'':'symbol':'0.0-0' }}</p>
                 <div class="cantidad">
                   <p>
                     Cantidad: <span>{{ product.cantidad }}</span>
@@ -35,12 +35,12 @@
         <p>RESUMEN</p>
         <div class="precios">
           <p>Subtotal</p>
-          <p>$ {{ totalcart() }}</p>
+          <p>{{ totalcart() | currency:'':'symbol':'0.0-0' }}</p>
         </div>
         <hr />
         <div class="precios">
           <p>Total</p>
-          <p>$ {{ totalcart() }}</p>
+          <p>{{ totalcart() | currency:'':'symbol':'0.0-0' }}</p>
         </div>
       </div>
     </div>
@@ -115,16 +115,16 @@
         <p>RESUMEN</p>
         <div class="precios">
           <p>Subtotal</p>
-          <p>$ {{ totalcart() }}</p>
+          <p>{{ totalcart() | currency:'':'symbol':'0.0-0' }}</p>
         </div>
         <div class="precios">
           <p>Envio</p>
-          <p>$0</p>
+          <p>{{ 0 | currency:'':'symbol':'0.0-0' }}</p>
         </div>
         <hr />
         <div class="precios">
           <p>Total</p>
-          <p>$ {{ totalcart() }}</p>
+          <p>{{ totalcart() | currency:'':'symbol':'0.0-0' }}</p>
         </div>
       </div>
     </div>
@@ -188,16 +188,16 @@
       <p>RESUMEN</p>
       <div class="precios">
         <p>Subtotal</p>
-        <p>$ {{ totalcart() }}</p>
+        <p>{{ totalcart() | currency:'':'symbol':'0.0-0' }}</p>
       </div>
       <div class="precios">
         <p>Envio</p>
-        <p>$0</p>
+        <p>{{ 0 | currency:'':'symbol':'0.0-0' }}</p>
       </div>
       <hr />
       <div class="precios">
         <p>Total</p>
-        <p>$ {{ totalcart() }}</p>
+        <p>{{ totalcart() | currency:'':'symbol':'0.0-0' }}</p>
       </div>
     </div>
   </div>
