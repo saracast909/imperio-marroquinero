@@ -8,6 +8,7 @@
             "category": "Bolsos",
             "subcategory": "Morrales",
             "image": "./assets/images/product1-11.png",
+            "favorite": false,
             "colors": [
                 {
                     "name": "Negro",
@@ -48,6 +49,7 @@
             "category": "Accesorios",
             "subcategory": "Billeteras",
             "image": "./assets/images/product2-11.png",
+            "favorite": false,
             "colors": [
                 {
                     "name": "Negro",
@@ -88,6 +90,7 @@
             "category": "Cinturones",
             "subcategory": "Unifaz",
             "image": "./assets/images/product3-11.png",
+            "favorite": false,
             "colors": [
                 {
                     "name": "Miel",
@@ -128,6 +131,7 @@
             "category": "Cinturones",
             "subcategory": "Unifaz",
             "image": "./assets/images/product3-11.png",
+            "favorite": false,
             "colors": [
                 {
                     "name": "Miel",
@@ -168,6 +172,7 @@
             "category": "Cinturones",
             "subcategory": "Unifaz",
             "image": "./assets/images/product3-11.png",
+            "favorite": false,
             "colors": [
                 {
                     "name": "Miel",
@@ -208,6 +213,7 @@
             "category": "Cinturones",
             "subcategory": "Unifaz",
             "image": "./assets/images/product3-11.png",
+            "favorite": false,
             "colors": [
                 {
                     "name": "Miel",
@@ -248,6 +254,7 @@
             "category": "Cinturones",
             "subcategory": "Unifaz",
             "image": "./assets/images/product3-11.png",
+            "favorite": false,
             "colors": [
                 {
                     "name": "Miel",

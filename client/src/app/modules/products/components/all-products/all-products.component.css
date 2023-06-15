@@ -125,6 +125,11 @@ h4{
     display: none;
 }
 
+i[class^="fi-ss-"]:before, i[class*=" fi-ss-"]:before, i[class^="fi-rs-"]:before, i[class*="fi-rs-"]:before {
+    line-height: 2;
+    font-size: 20px;
+}
+
 @media screen and (max-width: 770px){
     .filtros{
         display: flex;
