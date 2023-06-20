@@ -54,19 +54,7 @@
             <p>FILTROS</p>
         </div>
         <div class="cards-container">
-            <div *ngFor="let product of allProducts, index as i" class="product-card" >
-                <div class="product-image">
-                    <div class="heart" (click)="product.favorite = !product.favorite"><i [ngClass]="product.favorite ? 'fi fi-ss-heart' : 'fi fi-rs-heart' "></i></div>
-                    <img [src]="product.image" [alt]="product.name" [routerLink]="['product', i]">
-                </div>
-                <div class="product-info">
-                    <p>{{ product.name }}</p>
-                    <div>
-                        <p>{{ product.precio | currency:'':'symbol':'0.0-0' }}</p>
-                        <button (click)="addToCart(product)">Comprar</button>
-                    </div>
-                </div>
-            </div>
+            <app-card-product [product]="product" *ngFor="let product of allProducts, index as i" [i]="i"></app-card-product>
         </div>
     </section>
 </div>

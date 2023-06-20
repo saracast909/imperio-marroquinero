@@ -1,0 +1,14 @@
+<div class="product-card">
+    <div class="product-image">
+        <div class="heart" (click)="product.favorite = !product.favorite" (click)="addToFavorite(product)"><i [ngClass]="product.favorite ? 'fi fi-ss-heart' : 'fi fi-rs-heart' "></i></div>
+        <img [src]="product.image" [alt]="product.name" [routerLink]="['product', i]">
+    </div>
+    <div class="product-info" [routerLink]="['product', i]">
+        <p>{{ product.name }}</p>
+            <div>
+            <p>{{ product.precio | currency:'':'symbol':'0.0-0' }}</p>
+            <button (click)="addToCart(product)">Comprar</button>
+    </div>
+</div>
+
+<!-- [routerLink]="['product', i]" -->

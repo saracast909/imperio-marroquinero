@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FavoritesService } from 'src/app/services/favorites.service';
 
 @Component({
   selector: 'app-favorites',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./favorites.component.css']
 })
 export class FavoritesComponent {
-
+ 
+  myFavorites$ = this.favoriteService.myFavorites$
+  
+  constructor(private favoriteService: FavoritesService) {}
+  
 }

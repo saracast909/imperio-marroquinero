@@ -6,11 +6,13 @@ import { RouterModule } from '@angular/router';
 import { PaymentsModule } from '@modules/payments/payments.module';
 
 import { MatBadgeModule } from '@angular/material/badge';
+import { CardProductComponent } from './components/card-product/card-product.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    CardProductComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { MatBadgeModule } from '@angular/material/badge';
   ],
   exports: [
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    CardProductComponent
   ]
 })
 export class SharedModule { }

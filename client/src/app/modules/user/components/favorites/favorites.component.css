@@ -1,0 +1,48 @@
+.cards-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 235px));
+    gap: 10px 30px;
+    justify-content: center;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 25vh 75vh 20vh;
+    grid-template-areas: "nav     nav"
+                         "sidebar content"
+                         "footer  footer";
+}
+app-navbar{
+    grid-area: nav;
+}
+app-sidebar{
+    grid-area: sidebar;
+}
+.content{
+    grid-area: content;
+    overflow: auto;
+
+}
+app-footer{
+    grid-area: footer
+}
+
+@media screen and (max-width: 768px) {
+    app-sidebar{
+        display: flex;
+        align-items: center;
+    }
+    .content{
+        padding: 15px 20px;
+    }
+    .wrapper{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 12vh 8vh 80vh 20vh;
+        grid-template-areas: "nav"
+                             "sidebar"
+                             "content"
+                             "footer";
+    }
+}
