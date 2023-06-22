@@ -36,6 +36,9 @@
     background-color: var(--white);
     width: 100%;
 }
+.nav a{
+    text-decoration: none;
+}
 .first-nav, .second-nav{
     display: flex;
     justify-content: center;
@@ -48,7 +51,7 @@
 .navbar-left{
     display: flex;
     align-items: center;
-    left: 20px;
+    left: 30px;
     position: absolute;
 }
 .form-select{
@@ -58,12 +61,37 @@
     background-image: url("/assets/navbar/angle-small-down.png");
     background-position: right 1rem center;
     background-size: 20px 20px;
+    cursor: pointer;
 }
-.navbar-right, .navbar-right{
+.form-select-sm {
+    padding-left: 0;
+}
+.navbar-right{
     display: flex;
     position: absolute;
-    right: 20px;
+    right: 30px;
     gap: 20px;
+}
+.nav .first-nav a{
+    font-size: 18px;
+    margin-top: 10px;
+    color: var(--primary-color);
+}
+.nav .second-nav i{
+    font-size: 22px;
+    color: var(--primary-color);
+    margin-top: 10px;
+}
+.search{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+.search p{
+    margin: 0;
+    font-size: 19px;
+    font-weight: 500;
 }
 hr{
     margin: 0;
@@ -76,13 +104,13 @@ hr{
 }
 .navbar-right li{
     margin: 0 10px;
+    padding-top: 10px;
 }
 .navbar-center li {
     margin: 0 20px;
 }
 .navbar-center li a{
     color: var(--black);
-    text-decoration: none;
     font-weight: bold;
 }
 .navbar-center .menu li{
@@ -109,7 +137,8 @@ hr{
 .navbar-center .submenu li{
     margin: 0;
 }
-.menu-hamburguesa, .navbar-right .bolsa{
+.menu-hamburguesa, .second-nav #logo,
+.navbar-right li:nth-child(2){
     display: none;
 }
 /* Menu Mobile */
@@ -193,7 +222,6 @@ hr{
 .sub-mobile div{
     width: 80%;
 }
-
 app-shopping-cart{
     display: flex;
     background-color: var(--white);
@@ -207,14 +235,13 @@ app-shopping-cart{
     padding: 20px;
 }
 
-@media screen and (max-width: 768px) {
-    .first-nav .navbar-left .divisas, 
-    .first-nav .navbar-right .social-media, 
-    .navbar-center .menu,
-    .second-nav, hr{
+
+@media screen and (max-width: 880px) {
+    .first-nav, .navbar-center .menu, hr, .navbar-right li:first-child, .search{
         display: none; 
     } 
-    .menu-hamburguesa, .navbar-right .bolsa{
+    .menu-hamburguesa, .second-nav #logo,
+    .navbar-right li:nth-child(2){
         display: block;
     }
     .form-control{
@@ -223,6 +250,18 @@ app-shopping-cart{
     }
     .form-select-sm{
         font-size: 1.2rem;
+    }
+    .navbar-right{
+        right: 10px;
+    }
+    .navbar-left{
+        left: 10px;
+    }
+    .navbar-right li{
+        margin: 0 5px;
+    }
+    .second-nav{
+        margin: 0;
     }
 }
 @media screen and (max-width: 1000px) {

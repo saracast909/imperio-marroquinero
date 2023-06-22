@@ -61,3 +61,13 @@ $imperio-marroquinero-theme: mat.define-light-theme((
 .mat-step-header .mat-step-icon-state-done i{
   color: white;
 }
+
+.mat-badge-content {
+  color: var(--primary-color);
+  background: var(--secondary-color);
+  font-size: 18px;
+  font-weight: bold;
+}
+.mat-badge-medium .mat-badge-content {
+  line-height: 17px;
+}

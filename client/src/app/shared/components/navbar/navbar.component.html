@@ -5,36 +5,38 @@
     <div><p>Entregas a nivel nacional.</p></div>
     <div><p>Primer cambio gratis.</p></div>
   </div>
+
   <nav class="nav">
     <div class="first-nav">
       <div class="navbar-left">
-        <select name="divisas" class="form-select form-select-sm divisas">
+        <select name="currency" class="form-select form-select-sm curreny">
           <option selected value="cop">COP ($)</option>
           <option value="usd">USD ($)</option>
           <option value="eur">EUR (€)</option>
         </select>
-        <a (click)="menu = !menu" (click)="menuopen = !menuopen"><img [src]="menuopen ? 'assets/navbar/menu-mobile/cross.png' : 'assets/navbar/menu-mobile/menu-hamburguesa.png'" alt="Menu" class="menu-hamburguesa"/></a>
       </div>
       <div class="navbar-center">
-        <a routerLink="/home"><img src="./assets/logo.png" alt="Logo" id="logo"/></a>
+        <a routerLink="/home"><img src="./assets/Logo.svg" alt="Logo" id="logo"/></a>
       </div>
       <div class="navbar-right">
         <a href="http://facebook.com" target="_blank" rel="noopener noreferrer" class="social-media"><i class="fi fi-brands-facebook"></i></a>
         <a href="http://instagram.com" target="_blank" rel="noopener noreferrer" class="social-media"><i class="fi fi-brands-instagram"></i></a>
         <a href="http://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-media"><i class="fi fi-brands-tik-tok"></i></a>
-        <ul class="bolsa">
-          <li>
-            <a (click)="viewCart = !viewCart"><i matBadge={{totalproducts()}} class="fi fi-bs-shopping-bag"></i></a>
-          </li>
-        </ul>
       </div>
     </div>
+
     <hr />
+
     <div class="second-nav">
       <div class="navbar-left">
-        <input type="text" class="form-control" placeholder="Buscar" />
+        <a (click)="menu = !menu" (click)="menuopen = !menuopen"><i [ngClass]="menuopen ? 'fi fi-rs-cross' : 'fi fi-ss-menu-burger'" alt="Menu" class="menu-hamburguesa"></i></a>
+        <div class="search">
+          <i class="fi fi-rs-search"></i>
+          <p>Buscar</p>
+        </div>
       </div>
       <div class="navbar-center">
+        <a routerLink="/home"><img src="./assets/Logo.svg" alt="Logo" id="logo"/></a>
         <ul class="menu">
           <li>
             <a routerLink="/all-products">TODO</a>
@@ -52,19 +54,31 @@
       <div class="navbar-right">
         <ul>
           <li>
-            <a routerLink="/user/favorites"><i class="fi fi-bs-heart"></i></a>
+            <a routerLink="/user/favorites"><i class="fi fi-rs-heart"></i></a>
           </li>
           <li>
-            <a routerLink="/auth/login"><i class="fi fi-bs-user"></i></a>
+            <a><i class="fi fi-rs-search"></i></a>
           </li>
           <li>
-            <a (click)="viewCart = !viewCart"><i matBadge={{totalproducts()}}  class="bi bi-bag"></i></a>
+            <a routerLink="/auth/login"><i class="fi fi-rs-user"></i></a>
+          </li>
+          <li>
+            <a (click)="viewCart = !viewCart"><i matBadge={{totalproducts()}} class="fi fi-rs-shopping-bag"></i></a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 </header>
+
+
+
+
+
+
+
+
+
 <div *ngIf="menu" class="menu-mobile">
   <ul>
     <li>
