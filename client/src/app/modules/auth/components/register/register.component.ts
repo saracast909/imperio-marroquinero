@@ -21,6 +21,9 @@ export class RegisterComponent implements OnInit{
   get password(){
     return this.formRegister.get('password') as FormControl
   }
+  get conf_password(){
+    return this.formRegister.get('conf_password') as FormControl
+  }
 
   formRegister: FormGroup = new FormGroup({});
 
@@ -30,10 +33,14 @@ export class RegisterComponent implements OnInit{
         name: new FormControl('', Validators.required),
         lastname: new FormControl('', Validators.required),
         email: new FormControl('', [Validators.required, Validators.pattern("^[^ ]+@[^ ]+\.[a-z]{2,6}$")]),
-        password: new FormControl('', [Validators.required, Validators.minLength(6)])
+        password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+        conf_password: new FormControl('', [Validators.required, Validators.minLength(6)])
       }
     )
   }
+
+  typepass: boolean = true;
+  typeconfpass: boolean = true; 
 
   sendRegister(): void {
     const body = this.formRegister.value;

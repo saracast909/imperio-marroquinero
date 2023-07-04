@@ -68,6 +68,15 @@ input.ng-invalid.ng-dirty{
 input.ng-valid{
     border: solid 1.8px #006400;
 }
+.password-container{
+    position: relative;
+}
+.password-container span{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
 button:disabled{
     opacity: .7;
 }

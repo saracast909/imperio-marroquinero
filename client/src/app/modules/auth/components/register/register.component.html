@@ -30,7 +30,20 @@
                 <span *ngIf="password.errors?.['required']">Este campo es obligatorio.</span>
                 <span *ngIf="password.errors?.['minlength']">Debe tener minimo 6 caracteres.</span>
             </div>
-            <input type="password" id="password" class="form-control" formControlName="password"/>
+            <div class="password-container">
+                <input [type]="typepass ? 'password' : 'text'" id="password" class="form-control" formControlName="password"/>
+                <span (click)="typepass = !typepass"><i [ngClass]="typepass ? 'fi fi-rs-eye' : 'fi fi-rs-crossed-eye'"></i></span>
+            </div>
+
+            <label for="conf_password" class="form-label">Verificar contraseña</label>
+            <div [hidden]="conf_password.valid || conf_password.pristine" class="message">
+                <span *ngIf="conf_password.errors?.['required']">Este campo es obligatorio.</span>
+                <span *ngIf="conf_password.errors?.['minlength']">Debe tener minimo 6 caracteres.</span>
+            </div>
+            <div class="password-container">
+                <input [type]="typeconfpass ? 'password' : 'text'" id="conf_password" class="form-control" formControlName="conf_password"/>
+                <span (click)="typeconfpass = !typeconfpass"><i [ngClass]="typeconfpass ? 'fi fi-rs-eye' : 'fi fi-rs-crossed-eye'"></i></span> 
+            </div>
 
             <div>
                 <button class="btn mt-3" [disabled]="formRegister.invalid">CREAR CUENTA</button>

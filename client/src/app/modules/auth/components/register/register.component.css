@@ -71,6 +71,15 @@ input.ng-valid{
 button:disabled{
     opacity: .7;
 }
+.password-container{
+    position: relative;
+}
+.password-container span{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
 
 @media screen and (min-width: 425px){
     .description, .form{

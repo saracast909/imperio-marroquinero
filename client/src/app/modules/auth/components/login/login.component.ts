@@ -31,4 +31,6 @@ export class LoginComponent implements OnInit{
     const body = this.formLogin.value;
     console.log(body);
   }
+
+  type: boolean = true;
 }
