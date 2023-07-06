@@ -2,14 +2,18 @@
     <div class="container-img">
         <img src="./assets/banner-register.png" alt="Banner"/>
     </div>
+
     <div class="container-form">
+
         <a href="/home"><img src="./assets/cross.png" alt="cerrar"/></a>
+
         <div class="description">
             <h2>Registrarse</h2>
-            <p>¿Ya te encuentras registrado?<a routerLink="/auth/login">Inicia sesion</a></p>
+            <p>¿Ya estas registrado? <a routerLink="/auth/login">Inicia sesion</a></p>
         </div>
         
         <form [formGroup]="formRegister" class="form" (ngSubmit)="sendRegister()">
+            
             <label for="name" class="form-label">Nombre</label>
             <p [hidden]="name.valid || name.pristine" class="message">Este campo es obligatorio.</p>
             <input type="text" id="name" class="form-control" formControlName="name"/>
@@ -24,6 +28,10 @@
                 <span *ngIf="email.errors?.['pattern']">Ingrese un email valido.</span>
             </p>
             <input type="email" id="email" class="form-control" formControlName="email"/>
+
+            <label for="phone" class="form-label">Telefono</label>
+            <p [hidden]="phone.valid || phone.pristine" class="message"> Este campo es obligatorio.</p>
+            <input type="text" id="phone" class="form-control" formControlName="phone"/>
 
             <label for="password" class="form-label">Contraseña</label>
             <div [hidden]="password.valid || password.pristine" class="message">
@@ -45,9 +53,10 @@
                 <span (click)="typeconfpass = !typeconfpass"><i [ngClass]="typeconfpass ? 'fi fi-rs-eye' : 'fi fi-rs-crossed-eye'"></i></span> 
             </div>
 
-            <div>
-                <button class="btn mt-3" [disabled]="formRegister.invalid">CREAR CUENTA</button>
-            </div>
+            <input type="checkbox" name="tyc" id="tyc" formControlName="tyc">
+            <label>Aceptar <a routerLink="**">terminos y condiciones</a></label>
+
+            <button class="btn mt-3" [disabled]="formRegister.invalid">CREAR CUENTA</button>
         </form>
     </div>
 </section>

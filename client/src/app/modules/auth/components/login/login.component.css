@@ -32,6 +32,7 @@
     font-weight: 900;
     text-decoration: none;
     color: var(--black);
+    font-size: 18px;
 }
 .form a{
     display: flex;

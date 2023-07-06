@@ -18,12 +18,19 @@ export class RegisterComponent implements OnInit{
   get email(){
     return this.formRegister.get('email') as FormControl
   };
+  get phone(){
+    return this.formRegister.get('phone') as FormControl
+  };
   get password(){
     return this.formRegister.get('password') as FormControl
   }
   get conf_password(){
     return this.formRegister.get('conf_password') as FormControl
   }
+  get tyc(){
+    return this.formRegister.get('tyc') as FormControl
+  }
+
 
   formRegister: FormGroup = new FormGroup({});
 
@@ -33,8 +40,10 @@ export class RegisterComponent implements OnInit{
         name: new FormControl('', Validators.required),
         lastname: new FormControl('', Validators.required),
         email: new FormControl('', [Validators.required, Validators.pattern("^[^ ]+@[^ ]+\.[a-z]{2,6}$")]),
+        phone: new FormControl('', Validators.required),
         password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-        conf_password: new FormControl('', [Validators.required, Validators.minLength(6)])
+        conf_password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+        tyc: new FormControl('', [Validators.requiredTrue])
       }
     )
   }
