@@ -40,7 +40,6 @@
     color: var(--black);
     text-decoration: none;
     font-weight: bold;
-    margin-top: 15px;
 }
 .form-control{
     padding: 9px;
@@ -80,6 +79,14 @@ input.ng-valid{
 }
 button:disabled{
     opacity: .7;
+}
+.container-pass{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.container-pass label{
+    margin-left: 5px;
 }
 
 @media screen and (min-width: 425px){
