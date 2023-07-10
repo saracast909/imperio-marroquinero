@@ -24,7 +24,14 @@
                 <span (click)="type = !type"><i [ngClass]="type ? 'fi fi-rs-eye' : 'fi fi-rs-crossed-eye'"></i></span> 
             </div>
 
-            <a href="/recoverPass">¿Olvidaste tu contraseña?</a>
+            <div class="container-pass">
+                <div>
+                    <input type="checkbox">
+                    <label for="">Recuerdame</label>
+                </div>
+
+                <a href="/recoverPass">¿Olvidaste tu contraseña?</a>
+            </div>
 
             <div><button class="btn mt-3" [disabled]="formLogin.invalid" routerLink="/user">INGRESAR</button></div>
         </form>

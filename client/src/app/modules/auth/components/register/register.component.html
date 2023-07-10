@@ -36,7 +36,7 @@
             <label for="password" class="form-label">Contraseña</label>
             <div [hidden]="password.valid || password.pristine" class="message">
                 <span *ngIf="password.errors?.['required']">Este campo es obligatorio.</span>
-                <span *ngIf="password.errors?.['minlength']">Debe tener minimo 6 caracteres.</span>
+                <span *ngIf="password.errors?.['minlength']">Debe tener minimo 8 caracteres.</span>
             </div>
             <div class="password-container">
                 <input [type]="typepass ? 'password' : 'text'" id="password" class="form-control" formControlName="password"/>
@@ -46,7 +46,7 @@
             <label for="conf_password" class="form-label">Verificar contraseña</label>
             <div [hidden]="conf_password.valid || conf_password.pristine" class="message">
                 <span *ngIf="conf_password.errors?.['required']">Este campo es obligatorio.</span>
-                <span *ngIf="conf_password.errors?.['minlength']">Debe tener minimo 6 caracteres.</span>
+                <span *ngIf="conf_password.errors?.['minlength']">Debe tener minimo 8 caracteres.</span>
             </div>
             <div class="password-container">
                 <input [type]="typeconfpass ? 'password' : 'text'" id="conf_password" class="form-control" formControlName="conf_password"/>
