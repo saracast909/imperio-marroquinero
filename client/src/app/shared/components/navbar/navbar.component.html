@@ -39,6 +39,9 @@
         <a routerLink="/home"><img src="./assets/Logo.svg" alt="Logo" id="logo"/></a>
         <ul class="menu">
           <li>
+            <a routerLink="/home">INICIO</a>
+          </li>
+          <li>
             <a routerLink="/all-products">TODO</a>
           </li>
           <li *ngFor="let category of categories">
@@ -81,6 +84,10 @@
 
 <div *ngIf="menu" class="menu-mobile">
   <ul>
+    <li>
+      <img src="./assets/navbar/menu-mobile/home.png" alt="Inicio" />
+      <a routerLink="/home" class="mb-cat-pr">INICIO</a>
+    </li>
     <li>
       <img src="./assets/navbar/menu-mobile/shop.png" alt="Tienda" />
       <a routerLink="/all-products" class="mb-cat-pr">PRODUCTOS</a>
