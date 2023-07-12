@@ -16,7 +16,7 @@
             
             <label for="name" class="form-label">Nombre</label>
             <p [hidden]="name.valid || name.pristine" class="message">Este campo es obligatorio.</p>
-            <input type="text" id="name" class="form-control" formControlName="name"/>
+            <input type="text" id="name" class="form-control" formControlName="name" maxlength=""/>
 
             <label for="lastname" class="form-label">Apellido</label>
             <p [hidden]="lastname.valid || lastname.pristine" class="message"> Este campo es obligatorio.</p>
@@ -39,7 +39,7 @@
                 <span *ngIf="password.errors?.['minlength']">Debe tener minimo 8 caracteres.</span>
             </div>
             <div class="password-container">
-                <input [type]="typepass ? 'password' : 'text'" id="password" class="form-control" formControlName="password"/>
+                <input [type]="typepass ? 'password' : 'text'" id="password" class="form-control" formControlName="password" maxlength="20"/>
                 <span (click)="typepass = !typepass"><i [ngClass]="typepass ? 'fi fi-rs-eye' : 'fi fi-rs-crossed-eye'"></i></span>
             </div>
 
@@ -49,7 +49,7 @@
                 <span *ngIf="conf_password.errors?.['minlength']">Debe tener minimo 8 caracteres.</span>
             </div>
             <div class="password-container">
-                <input [type]="typeconfpass ? 'password' : 'text'" id="conf_password" class="form-control" formControlName="conf_password"/>
+                <input [type]="typeconfpass ? 'password' : 'text'" id="conf_password" class="form-control" formControlName="conf_password" maxlength="20"/>
                 <span (click)="typeconfpass = !typeconfpass"><i [ngClass]="typeconfpass ? 'fi fi-rs-eye' : 'fi fi-rs-crossed-eye'"></i></span> 
             </div>
 

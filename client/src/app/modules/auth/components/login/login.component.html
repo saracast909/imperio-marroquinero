@@ -20,7 +20,7 @@
             <label for="password" class="form-label">Contraseña</label>
             <p [hidden]="password.valid || password.pristine" class="message">Este campo es obligatorio.</p>
             <div class="password-container">
-                <input [type]="type ? 'password' : 'text'" id="password" class="form-control" formControlName="password" />
+                <input [type]="type ? 'password' : 'text'" id="password" class="form-control" formControlName="password" maxlength="20"/>
                 <span (click)="type = !type"><i [ngClass]="type ? 'fi fi-rs-eye' : 'fi fi-rs-crossed-eye'"></i></span> 
             </div>
 
